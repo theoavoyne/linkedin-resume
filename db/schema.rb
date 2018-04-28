@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20180424161213) do
   enable_extension "plpgsql"
 
   create_table "users", force: :cascade do |t|
-    t.string "email", default: "", null: false
+    t.string "email_address", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -30,7 +30,13 @@ ActiveRecord::Schema.define(version: 20180424161213) do
     t.datetime "updated_at", null: false
     t.string "first_name"
     t.string "last_name"
-    t.index ["email"], name: "index_users_on_email", unique: true
+    t.string "linkedin_profile_url"
+    t.text "summary"
+    t.string "location_name"
+    t.string "location_country"
+    t.text "headline"
+    t.string "linkedin_picture_url"
+    t.index ["email_address"], name: "index_users_on_email_address", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
