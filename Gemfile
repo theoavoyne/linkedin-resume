@@ -10,6 +10,8 @@ gem 'rails', '5.1.5'
 gem 'redis'
 gem 'devise'
 gem 'pundit'
+gem 'omniauth'
+gem 'omniauth-linkedin'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
