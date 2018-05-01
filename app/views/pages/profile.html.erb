@@ -1,9 +1,9 @@
 <div class="container">
+  <%= image_tag current_user.linkedin_picture_url %>
   <p><strong>First name: </strong><%= current_user.first_name %></p>
   <p><strong>Last name: </strong><%= current_user.last_name %></p>
   <p><strong>Headline: </strong><%= current_user.headline %></p>
   <p><strong>Email: </strong><%= current_user.email %></p>
   <p><strong>Location: </strong><%= current_user.location_name %> (<%= current_user.location_country.upcase %>)</p>
   <a href='<%= current_user.linkedin_profile_url %>'>Linkedin profile</a>
-
 </div>
