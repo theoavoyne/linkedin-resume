@@ -1,4 +1,15 @@
 <div id="content">
-  <h1>Hello world</h3>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pulvinar eleifend ullamcorper. Aenean fringilla ultricies consectetur. Sed vulputate odio metus, ut eleifend ante commodo sed. Donec bibendum libero sit amet blandit iaculis. Etiam vitae vulputate nisi, ut pretium eros. Pellentesque eget accumsan ante. Nam arcu turpis, varius non elit quis.</p>
+  <div id="header">
+    <div id="name"><%= current_user.first_name %> <%= current_user.last_name.upcase %></div>
+    <div id="email"><%= current_user.email %></div>
+  </div>
+  <div class="bar"></div>
+  <div class="title">EDUCATION</div>
+  <div class="bar"></div>
+  <div class="title">EXPERIENCE</div>
+  <div id="footer">
+    <a id="linkedin-link" href='<%= current_user.linkedin_profile_url %>'>
+      <i class="fab fa-linkedin"></i>
+    </a>
+  </div>
 </div>
