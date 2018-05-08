@@ -1,0 +1,29 @@
+<% wicked_pdf_stylesheet_link_tag "pages/_editor.scss" %>
+
+<style>
+  #content {
+    color: grey;
+    position: relative;
+    font-family: Roboto;
+  }
+  .title {
+    position: absolute;
+    top: 0;
+    font-weight: bold;
+    font-size: 40px;
+    width: 100%;
+  }
+  .paragraph {
+    font-size: 28px;
+  }
+</style>
+
+<div id="content">
+  <%= image_tag current_user.linkedin_picture_url %>
+  <p class="title"><%= current_user.first_name %></p>
+  <p class="title"><%= current_user.last_name %></p>
+  <p class="paragraph"><strong>Headline: </strong><%= current_user.headline %></p>
+  <p class="paragraph"><strong>Email: </strong><%= current_user.email %></p>
+  <p class="paragraph"><strong>Location: </strong><%= current_user.location_name %> (<%= current_user.location_country.upcase %>)</p>
+  <a class="paragraph" href='<%= current_user.linkedin_profile_url %>'>Linkedin profile</a>
+</div>
