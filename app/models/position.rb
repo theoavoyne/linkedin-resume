@@ -1,17 +1,26 @@
 class Position < ApplicationRecord
   belongs_to :user
 
-  validates :company_name, presence: true
-  validates :summary, presence: true
-
   validates :summary, length: {
     maximum: 2000, message:
-    "should be less than 2000 characters"
+    "must not exceed 2000 characters"
     # Linkedin validation
   }
 
   validates :start_date, presence: true
-  # For :end_date, it depends if :is_current
+  validates :end_date, presence: true, unless: :is_current
+
+  validates :is_current, inclusion: { in: [true, false] }
 
   validates :title, presence: true
+  validates :title, length: {
+    maximum: 100, message:
+    "must not exceed 100 characters"
+  }
+
+  validates :company_name, presence: true
+  validates :company_name, length: {
+    maximum: 100, message:
+    "must not exceed 100 characters"
+  }
 end

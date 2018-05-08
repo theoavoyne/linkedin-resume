@@ -2,8 +2,18 @@ class Education < ApplicationRecord
   belongs_to :user
 
   validates :school_name, presence: true
-  validates :field_of_study, presence: true
-  validates :degree, presence: true
-  validates :start_date, presence: true
-  # For :end_date, it depends if :is_current
+  validates :school_name, length: {
+    maximum: 100, message:
+    "must not exceed 100 characters"
+  }
+
+  validates :field_of_study, length: {
+    maximum: 100, message:
+    "must not exceed 100 characters"
+  }
+
+  validates :degree, length: {
+    maximum: 100, message:
+    "must not exceed 100 characters"
+  }
 end
