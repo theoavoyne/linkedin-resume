@@ -6,4 +6,13 @@ class PagesController < ApplicationController
 
   def profile
   end
+
+  def editor
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "editor"   # Excluding ".pdf" extension.
+      end
+    end
+  end
 end
