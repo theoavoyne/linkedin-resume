@@ -6,4 +6,17 @@ class PagesController < ApplicationController
 
   def profile
   end
+
+  def editor
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "resume",
+        template: "templates/finance.html.erb",
+        layout: 'pdf.html',
+        show_as_html: params.key?('debug'),
+        margin: { top: 20 }
+      end
+    end
+  end
 end

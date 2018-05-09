@@ -12,6 +12,12 @@ gem 'devise'
 gem 'pundit'
 gem 'omniauth'
 gem 'omniauth-linkedin'
+gem 'prawn'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf'
+gem 'wkhtmltopdf-binary'
+
+gem 'faker'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
