@@ -1,4 +1,8 @@
 class User < ApplicationRecord
+
+  has_many :educations, dependent: :destroy
+  has_many :positions, dependent: :destroy
+  has_many :skills, dependent: :destroy
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable
   devise :database_authenticatable, :registerable,
