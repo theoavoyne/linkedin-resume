@@ -12,7 +12,7 @@ class PagesController < ApplicationController
 
   def resume
     render pdf: "resume",
-    template: "templates/#{current_user.template}.html.erb",
+    template: "templates/_#{current_user.template}.html.erb", #see this file in the views
     layout: 'pdf.html',
     show_as_html: params.key?('debug'),
     margin: { top: 20 }

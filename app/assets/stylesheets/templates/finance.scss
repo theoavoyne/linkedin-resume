@@ -38,13 +38,44 @@
   border-bottom: 0.3mm solid rgba(0, 0, 0, 0.9);
 }
 
-.flex-center {
-  display: flex;
-  justify-content: space-around;
-}
-
 .title {
   font-weight: 900;
   font-size: 12pt;
-  margin: 3mm 0;
+  margin: 5mm 0 3mm 0;
+}
+
+// ELEMENTS
+
+.element {
+  width: 19cm;
+  margin-bottom: 5mm;
+  display: -webkit-box;
+}
+
+.date {
+  width: 4cm;
+  margin-right: 5mm;
+  left: 0;
+  font-size: 10pt;
+}
+
+.degree-info {
+  width: 14.5cm;
+}
+
+.degree {
+  font-size: 10pt;
+  font-weight: 500;
+  margin-bottom: 2mm;
+}
+
+.institution {
+  font-size: 10pt;
+  font-weight: 900;
+  margin-bottom: 2mm;
+  font-size: 10pt;
+}
+
+.notes {
+  font-size: 10pt;
 }

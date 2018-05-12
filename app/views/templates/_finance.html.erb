@@ -1,16 +1,36 @@
 <div id="content">
+
+  <!-- HEADER -->
   <div id="header">
     <div id="name"><%= current_user.first_name %> <%= current_user.last_name.upcase %></div>
     <div id="email"><%= current_user.email %></div>
   </div>
+
+  <!-- EDUCATION -->
   <div class="bar"></div>
   <div class="title">EDUCATION</div>
+  <% current_user.educations.each do |education| %>
+    <div class="element">
+      <div class="date">Sept 2014 - June 2017</div>
+      <div class="degree-info">
+        <div class="degree"><%= education.degree.upcase %></div>
+        <div class="institution"><%= education.school_name %></div>
+        <div class="notes"><%= education.notes %></div>
+      </div>
+    </div>
+  <% end %>
+
+  <!-- EXPERIENCE -->
   <div class="bar"></div>
   <div class="title">EXPERIENCE</div>
+
+  <!-- FOOTER -->
   <div class="bar"></div>
   <div id="footer">
     <a id="linkedin-link" href='<%= current_user.linkedin_profile_url %>'>
       <i class="fab fa-linkedin"></i>
     </a>
   </div>
+
 </div>
+
