@@ -1,0 +1,22 @@
+.custom-btn-big, .custom-btn, .custom-btn-darker {
+  display: block;
+  background-color: $color-button;
+  color: #fff;
+  padding: 20px 30px;
+  border-radius: 3px;
+  font-size: 22px;
+  &:hover {
+    color: #fff;
+    text-decoration: none;
+    background-color: rgb(220, 100, 40);
+  }
+}
+
+.custom-btn, .custom-btn-darker {
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+.custom-btn-darker {
+  background-color: rgba(200, 200, 200, 0.3);
+}
