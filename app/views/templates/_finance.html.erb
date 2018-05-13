@@ -14,11 +14,11 @@
   <div class="title">EDUCATION</div>
   <% current_user.educations.each do |education| %>
     <div class="element">
-      <div class="date">Sept 2014 - June 2017</div>
-      <div class="degree-info">
+      <div class="date"><%= education.start_date.strftime("%b %Y")%> - <%= education.end_date.strftime("%b %Y")%></div>
+      <div class="element-info">
         <div class="degree"><%= education.degree.upcase %></div>
         <div class="institution"><%= education.school_name %></div>
-        <div class="notes"><%= education.notes %></div>
+        <div class=""><%= education.notes %></div>
       </div>
     </div>
   <% end %>
@@ -26,10 +26,20 @@
   <!-- EXPERIENCE -->
   <div class="bar"></div>
   <div class="title">EXPERIENCE</div>
+  <% current_user.positions.each do |position| %>
+    <div class="element">
+      <div class="date"><%= position.start_date.strftime("%b %Y")%> - <%= position.is_current ? "Actual" : position.end_date.strftime("%b %Y")%></div>
+      <div class="element-info">
+        <div class="position"><%= position.title.upcase %></div>
+        <div class="institution"><%= position.company_name %></div>
+        <div class=""><%= position.summary %></div>
+      </div>
+    </div>
+  <% end %>
 
   <!-- FOOTER -->
-  <div class="bar"></div>
   <div id="footer">
+    <div class="bar"></div>
     <a id="linkedin-link" href='<%= current_user.linkedin_profile_url %>'>
       <i class="fab fa-linkedin"></i>
     </a>

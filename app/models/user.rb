@@ -30,4 +30,8 @@ class User < ApplicationRecord
 
     return user
   end
+
+  def fullname
+    return self.first_name + " " + self.last_name
+  end
 end

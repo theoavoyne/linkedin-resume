@@ -2,6 +2,9 @@
 
 #content {
   font-family: 'Roboto';
+  font-size: 10pt;
+  position: relative;
+  height: 26.7cm;
 }
 
 #header {
@@ -11,6 +14,9 @@
 #footer {
   text-align: center;
   margin-top: 3mm;
+  position: absolute;
+  bottom: 0;
+  width: 19cm;
 }
 
 #name {
@@ -26,11 +32,12 @@
 }
 
 #linkedin-link {
-  color: black;
-  font-size: 20pt;
+  color: rgb(100, 100, 100);
+  font-size: 25pt;
+  margin-left: 2mm;
   &:hover {
     text-decoration: none;
-    color: black;
+    color: rgb(100, 100, 100);
   }
 }
 
@@ -59,23 +66,16 @@
   font-size: 10pt;
 }
 
-.degree-info {
+.element-info {
   width: 14.5cm;
 }
 
-.degree {
-  font-size: 10pt;
+.degree, .position {
   font-weight: 500;
   margin-bottom: 2mm;
 }
 
 .institution {
-  font-size: 10pt;
   font-weight: 900;
   margin-bottom: 2mm;
-  font-size: 10pt;
-}
-
-.notes {
-  font-size: 10pt;
 }
