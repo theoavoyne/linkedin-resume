@@ -9,6 +9,10 @@
     color: #fff;
     text-decoration: none;
     background-color: rgb(220, 100, 40);
+  };
+  &:focus {
+    color: #fff;
+    text-decoration: none;
   }
 }
 
@@ -18,5 +22,15 @@
 }
 
 .custom-btn-darker {
-  background-color: rgba(200, 200, 200, 0.3);
+  background-color: transparent;
+  transition: all 1s;
+  border: 1px solid #fff;
+  &:hover {
+    background-color: rgba(200, 200, 200, 0.3);
+  }
+}
+
+.btn-to-editor {
+  width: fit-content;
+  margin: 60px auto;
 }
