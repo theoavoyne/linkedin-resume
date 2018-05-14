@@ -1,8 +1,11 @@
+
+// Landing section (no logged in)
 .landing-subtitle {
   font-size: 32px;
   margin-top: 0;
 }
 
+// Banner
 .flex-banner {
   display: flex;
   flex-direction: column;
@@ -14,6 +17,7 @@
   background-color: $background-banner;
 }
 
+// Steps section with geometric-shape (faking arrows)
 .banner-geometric-shape {
   width: 100vw;
   color: $background-banner;
@@ -45,6 +49,7 @@
   }
 }
 
+// Geometric-shape (faking arrows)
 .left-rectangle, .middle-rectangle, .right-rectangle {
   display: flex;
   justify-content: center;
@@ -91,8 +96,7 @@
   height: 300px;
 }
 
-// Section reviews
-
+// Section reviews (Landing no logged in)
 .reviews {
   color: $main-font-color;
   margin-bottom: 40px;
