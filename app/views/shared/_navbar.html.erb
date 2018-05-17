@@ -1,25 +1,25 @@
-<div class="navbar-wagon">
+<div class="navbar-custom">
   <!-- Logo -->
-  <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    LINKEDIN-RESUME
+  <%= link_to root_path, class: "navbar-custom-brand" do %>
+    Resume Factory
   <% end %>
 
   <!-- Right Navigation -->
-  <div class="navbar-wagon-right hidden-xs hidden-sm">
+  <div class="navbar-custom-right hidden-xs hidden-sm">
 
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "Host", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Trips", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <a href="#" class="navbar-custom-item navbar-custom-link">Templates</a>
+      <a href="#" class="navbar-custom-item navbar-custom-link">FAQ</a>
+      <a href="#" class="navbar-custom-item navbar-custom-link">Contact</a>
 
       <!-- Avatar with dropdown menu -->
-      <div class="navbar-wagon-item">
+      <div class="navbar-custom-item">
         <div class="dropdown">
           <% avatar_url = current_user.linkedin_picture_url || "http://placehold.it/30x30" %>
-          <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+          <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-custom-menu", "data-toggle" => "dropdown" %>
+          <ul class="dropdown-menu dropdown-menu-right navbar-custom-dropdown-menu">
             <li>
               <%= link_to profile_path do %>
                 <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
@@ -40,18 +40,36 @@
       </div>
     <% else %>
       <!-- Login link (when logged out) -->
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <a href="#" class="navbar-custom-item navbar-custom-link">Templates</a>
+      <a href="#" class="navbar-custom-item navbar-custom-link">FAQ</a>
+      <a href="#" class="navbar-custom-item navbar-custom-link">Contact</a>
+
+      <%= link_to t(".sign_up", default: "Sign up"), new_user_session_path, class: "navbar-custom-item navbar-custom-link custom-btn" %>
+
+      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-custom-item navbar-custom-link custom-btn-darker" %>
     <% end %>
   </div>
 
   <!-- Dropdown list appearing on mobile only -->
-  <div class="navbar-wagon-item hidden-md hidden-lg">
+  <div class="navbar-custom-item hidden-md hidden-lg">
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Some mobile link</a></li>
-        <li><a href="#">Other one</a></li>
-        <li><a href="#">Other one</a></li>
+      <ul class="dropdown-menu dropdown-menu-right navbar-custom-dropdown-menu">
+        <% if user_signed_in? %>
+          <li><a href="#" class="navbar-custom-item navbar-custom-link">Templates</a></li>
+          <li><a href="#" class="navbar-custom-item navbar-custom-link">FAQ</a></li>
+          <li><a href="#" class="navbar-custom-item navbar-custom-link">Contact</a></li>
+          <li><%= link_to destroy_user_session_path, method: :delete do %><i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+              <% end %></li>
+        <% else %>
+          <li><a href="#" class="navbar-custom-item navbar-custom-link">Templates</a></li>
+          <li><a href="#" class="navbar-custom-item navbar-custom-link">FAQ</a></li>
+          <li><a href="#" class="navbar-custom-item navbar-custom-link">Contact</a></li>
+
+          <li><%= link_to t(".sign_up", default: "Sign up"), new_user_session_path, class: "navbar-custom-item navbar-custom-link" %></li>
+
+          <li><%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-custom-item navbar-custom-link" %></li>
+          <% end %>
       </ul>
     </div>
   </div>
