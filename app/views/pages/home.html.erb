@@ -7,7 +7,7 @@
     <% else %>
       <h1 class="landing-title">Resume Factory</h1>
       <h2 class="landing-subtitle">Instantly create your resume with LinkedIn</h2>
-      <%= link_to 'Create my resume', new_user_session_path, class: 'custom-btn-big' %>
+      <%= link_to 'Create my resume', user_linkedin_omniauth_authorize_path, class: 'custom-btn-big' %>
     <% end %>
   </div>
 </div>
