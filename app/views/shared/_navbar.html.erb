@@ -44,9 +44,9 @@
       <a href="#" class="navbar-custom-item navbar-custom-link">FAQ</a>
       <a href="#" class="navbar-custom-item navbar-custom-link">Contact</a>
 
-      <%= link_to t(".sign_up", default: "Sign up"), new_user_session_path, class: "navbar-custom-item navbar-custom-link custom-btn" %>
-
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-custom-item navbar-custom-link custom-btn-darker" %>
+      <%= link_to user_linkedin_omniauth_authorize_path, class: "navbar-custom-item navbar-custom-link custom-btn", id: "loggin-btn" do %>
+        <div id="logo-linkedin"><i class="fab fa-linkedin"></i></div>Sign in with Linkedin
+      <% end %>
     <% end %>
   </div>
 
