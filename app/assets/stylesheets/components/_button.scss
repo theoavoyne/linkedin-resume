@@ -1,0 +1,39 @@
+// Main btn design
+.custom-btn-big, .custom-btn, .custom-btn-darker {
+  display: block;
+  background-color: $color-button;
+  color: #fff;
+  padding: 20px 30px;
+  border-radius: 3px;
+  font-size: 22px;
+  &:hover {
+    color: #fff;
+    text-decoration: none;
+    background-color: rgb(220, 100, 40);
+  };
+  &:focus {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+// Main btn smaller and not orange
+.custom-btn, .custom-btn-darker {
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+.custom-btn-darker {
+  background-color: transparent;
+  transition: all 1s;
+  border: 1px solid #fff;
+  &:hover {
+    background-color: rgba(200, 200, 200, 0.3);
+  }
+}
+
+// Last Call to action below the templates
+.btn-to-editor {
+  width: fit-content;
+  margin: 40px auto;
+}

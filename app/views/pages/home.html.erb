@@ -1,4 +1,89 @@
-<div class="container">
-  <h1>Instantly create your resume with LinkedIn</h1>
+<!-- Banner -->
+<div class="landing-wrapper">
+  <div id="flex-banner">
+    <% if user_signed_in? %>
+      <h1>Welcome back <%= current_user.first_name %>!</h1>
+      <a href="#" id="scroll-to-pick-a-template" class="custom-btn-big">Create new resume</a>
+    <% else %>
+      <h1 class="landing-title">Resume Factory</h1>
+      <h2 class="landing-subtitle">Instantly create your resume with LinkedIn</h2>
+      <%= link_to 'Create my resume', new_user_session_path, class: 'custom-btn-big' %>
+    <% end %>
+  </div>
 </div>
 
+<!-- Steps -->
+<div class="row banner-geometric-shape">
+  <div class="col-xs-12 col-md-4 left-rectangle">
+    <!-- If user logged in, the first step is completed, so there is a tick
+    istead of 1 -->
+    <span class="step">
+      <%= user_signed_in? ? content_tag(:i, "", class: ["fas", "fa-check"]) : 1 %>
+    </span>
+    <p>Login / Sign up</p>
+  </div>
+  <div class="col-xs-12 col-md-4 middle-rectangle">
+    <span class="step">2</span>
+    <p>Pick a template</p>
+    <div class="triangle triangle-middle"></div>
+  </div>
+  <div class="col-xs-12 col-md-4 right-rectangle">
+    <span class="step">3</span>
+    <p>Download your resume!</p>
+    <div class="triangle triangle-right"></div>
+  </div>
+</div>
+
+<!-- Resume templates -->
+<div class="container section-templates">
+  <h3 class="template-intro-title">Pick a template</h3>
+  <div class="row carousel-templates">
+    <div class="col-xs-12 col-sm-6 col-md-3">
+      <div class="template" style="background-image: url('<%= image_path "Resume.jpeg"%>')"></div>
+      <h4 class= "template-title">Finance</h4>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+      <div class="template" style="background-image: url('<%= image_path "Resume.jpeg"%>')"></div>
+      <h4 class= "template-title">Law</h4>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+      <div class="template" style="background-image: url('<%= image_path "Resume.jpeg"%>')"></div>
+      <h4 class= "template-title">Design</h4>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+      <div class="template" style="background-image: url('<%= image_path "Resume.jpeg"%>')"></div>
+      <h4 class= "template-title">Tech</h4>
+    </div>
+  </div>
+  <%= link_to 'View my new resume', editor_path, class: 'custom-btn-big btn-to-editor' %>
+</div>
+
+<!-- Reviews -->
+<div class="wrapper-light-blue">
+  <div class="container reviews">
+    <h3>They recommend us</h3>
+    <div class="row row-reviews">
+      <div class="col-xs-12 col-sm-4 review-column">
+        <div class="review">
+          <img src="https://randomuser.me/api/portraits/thumb/men/44.jpg" alt="#">
+          <p>"Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type."</p>
+          <p><strong>Bob - Web develper</strong></p>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-4 review-column">
+        <div class="review">
+          <img src="https://randomuser.me/api/portraits/thumb/men/44.jpg" alt="#">
+          <p>"Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type."</p>
+          <p><strong>Bob - Web develper</strong></p>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-4 review-column">
+        <div class="review">
+          <img src="https://randomuser.me/api/portraits/thumb/men/44.jpg" alt="#">
+          <p>"Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type."</p>
+          <p><strong>Bob - Web develper</strong></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
