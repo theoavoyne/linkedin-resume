@@ -35,6 +35,13 @@
 </div>
 
 <!-- Resume templates -->
+
+<%= simple_form_for current_user do |f| %>
+  <%= f.button, :template collection_check_boxes('finance', 'tech') %>
+  <%= f.button :submit, value: 'View my new resume', class: 'custom-btn-big btn-to-editor' %>
+<% end %>
+
+<!--
 <div class="container section-templates">
   <h3 class="template-intro-title">Pick a template</h3>
   <div class="row carousel-templates">
@@ -57,6 +64,7 @@
   </div>
   <%= link_to 'View my new resume', editor_path, class: 'custom-btn-big btn-to-editor' %>
 </div>
+-->
 
 <!-- Reviews -->
 <div class="wrapper-light-blue">
