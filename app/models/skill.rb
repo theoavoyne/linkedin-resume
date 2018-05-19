@@ -3,7 +3,7 @@ class Skill < ApplicationRecord
 
   validates :name, presence: true
   validates :name, length: {
-    maximum: 100, message:
-    "must not exceed 100 characters"
+    maximum: 40, message:
+    "must not exceed 40 characters"
   }
 end

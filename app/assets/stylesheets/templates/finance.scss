@@ -1,50 +1,90 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700,900');
 
-#content {
+
+* {
   font-family: 'Roboto';
-}
-
-#header {
-  text-align: center;
-}
-
-#footer {
-  text-align: center;
-  margin-top: 3mm;
-}
-
-#name {
-  font-weight: 900;
-  font-size: 20pt;
-  margin-bottom: 1mm;
-}
-
-#email {
-  font-weight: 400;
-  font-size: 12pt;
-  margin-bottom: 12mm;
-}
-
-#linkedin-link {
-  color: black;
-  font-size: 20pt;
-  &:hover {
-    text-decoration: none;
-    color: black;
-  }
+  font-size: 10pt;
 }
 
 .bar {
   border-bottom: 0.3mm solid rgba(0, 0, 0, 0.9);
 }
 
-.flex-center {
-  display: flex;
-  justify-content: space-around;
+// HEADER
+
+#header {
+  text-align: center;
+  height: 28mm;
 }
 
-.title {
+#name {
+  font-weight: 900;
+  font-size: 20pt;
+  margin-bottom: 2mm;
+
+  // Limit the no. of lines to 1
+  line-height: 20pt;
+  height: 20pt;
+}
+
+#email {
+  font-weight: 400;
+  font-size: 12pt;
+
+  // Limit the no. of lines to 1
+  line-height: 12pt;
+  height: 12pt;
+}
+
+// SECTION
+
+.section {
+  margin-top: 5mm;
+  &:not(:last-child) { // The footer already take care of a certain margin.
+    margin-bottom: 5mm;
+  }
+}
+
+.section-title {
   font-weight: 900;
   font-size: 12pt;
-  margin: 3mm 0;
+  margin-bottom: 3mm;
+}
+
+// ELEMENT
+
+.element {
+  width: 19cm;
+  display: -webkit-box;
+  &:not(:last-child) {
+    margin-bottom: 5mm;
+  }
+}
+
+.date {
+  width: 4cm;
+  margin-right: 5mm;
+}
+
+.element-content {
+  width: 14.5cm;
+}
+
+.degree, .title {
+  font-weight: 500;
+  margin-bottom: 2mm;
+
+  // Limit the no. of lines to 1
+  line-height: 10pt;
+  height: 10pt;
+}
+
+.school, .company {
+  font-weight: 900;
+  margin-bottom: 2mm;
+  overflow-wrap: break-word;
+
+  // Limit the no. of lines to 1
+  line-height: 10pt;
+  height: 10pt;
 }

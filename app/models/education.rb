@@ -8,12 +8,12 @@ class Education < ApplicationRecord
   }
 
   validates :field_of_study, length: {
-    maximum: 100, message:
-    "must not exceed 100 characters"
+    maximum: 60, message:
+    "must not exceed 60 characters"
   }
 
   validates :degree, length: {
-    maximum: 100, message:
-    "must not exceed 100 characters"
+    maximum: 60, message:
+    "must not exceed 60 characters"
   }
 end
