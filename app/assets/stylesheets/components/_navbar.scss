@@ -1,6 +1,8 @@
 /* Main navbar */
 .navbar-custom {
-  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
+  position: fixed;
+  width: 100vw;
+  z-index: 9;
   background: $background-banner;
   transition: all 0.3s ease;
   height: 70px;
@@ -8,6 +10,17 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+/* Just when scroll down */
+.navbar-is-gray {
+  background-color: $light-gray;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
+  .navbar-custom-item,
+  .navbar-custom-link,
+  .navbar-custom-brand {
+    color: $background-banner;
+  }
 }
 
 /* Logo */
