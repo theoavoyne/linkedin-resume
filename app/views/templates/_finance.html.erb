@@ -1,51 +1,43 @@
 <%= stylesheet_link_tag "templates/" + current_user.template, media: 'all' %>
 <!-- For each new template, don't forget to add the css file in the config/initializers/assets.rb file -->
 
-<% header_height = "5cm" %>
+<!-- HEADER -->
+<div id="header">
+  <div id="name"><%= current_user.first_name %> <%= current_user.last_name.upcase %></div>
+  <div id="email"><%= current_user.email %></div>
+</div>
 
-<div id="content">
+<div class="bar"></div>
 
-  <!-- HEADER -->
-  <div id="header" style=<%= header_height %>>
-    <div id="name"><%= current_user.first_name %> <%= current_user.last_name.upcase %></div>
-    <div id="email"><%= current_user.email %></div>
-  </div>
-  <div class="bar"></div>
-
-  <!-- EDUCATION -->
-  <div class="title">EDUCATION</div>
+<!-- EDUCATION -->
+<div class="section">
+  <div class="section-title">EDUCATION</div>
   <% current_user.educations.each do |education| %>
     <div class="element">
       <div class="date"><%= education.start_date.strftime("%b %Y")%> - <%= education.end_date.strftime("%b %Y")%></div>
-      <div class="element-info">
+      <div class="element-content">
         <div class="degree"><%= education.degree.upcase %></div>
-        <div class="institution"><%= education.school_name %></div>
+        <div class="school"><%= education.school_name %></div>
         <div class=""><%= education.notes %></div>
       </div>
     </div>
   <% end %>
+</div>
 
-  <!-- EXPERIENCE -->
-  <div class="bar"></div>
-  <div class="title">EXPERIENCE</div>
+<div class="bar"></div>
+
+<!-- EXPERIENCE -->
+<div class="section">
+  <div class="section-title">EXPERIENCE</div>
   <% current_user.positions.each do |position| %>
     <div class="element">
       <div class="date"><%= position.start_date.strftime("%b %Y")%> - <%= position.is_current ? "Actual" : position.end_date.strftime("%b %Y")%></div>
-      <div class="element-info">
-        <div class="position"><%= position.title.upcase %></div>
-        <div class="institution"><%= position.company_name %></div>
+      <div class="element-content">
+        <div class="title"><%= position.title.upcase %></div>
+        <div class="company"><%= position.company_name %></div>
         <div class=""><%= position.summary %></div>
       </div>
     </div>
   <% end %>
-
-  <!-- FOOTER -->
-  <div id="footer">
-    <div class="bar"></div>
-    <a id="linkedin-link" href='<%= current_user.linkedin_profile_url %>'>
-      <i class="fab fa-linkedin"></i>
-    </a>
-  </div>
-
 </div>
 

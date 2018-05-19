@@ -14,13 +14,13 @@ class Position < ApplicationRecord
 
   validates :title, presence: true
   validates :title, length: {
-    maximum: 100, message:
-    "must not exceed 100 characters"
+    maximum: 60, message:
+    "must not exceed 60 characters"
   }
 
   validates :company_name, presence: true
   validates :company_name, length: {
-    maximum: 100, message:
-    "must not exceed 100 characters"
+    maximum: 60, message:
+    "must not exceed 60 characters"
   }
 end

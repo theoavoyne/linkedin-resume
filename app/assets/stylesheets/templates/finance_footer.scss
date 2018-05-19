@@ -1,0 +1,24 @@
+* {
+  font-family: 'Roboto';
+}
+
+#footer-bar {
+  border-bottom: 0.3mm solid rgba(0, 0, 0, 0.9);
+  margin-bottom: 4mm;
+}
+
+#footer {
+  padding-top: 5mm;
+  text-align: center;
+  width: 19cm;
+}
+
+#linkedin-link {
+  color: rgb(100, 100, 100);
+  margin-left: 2mm;
+  font-size: 25pt;
+  &:hover {
+    text-decoration: none;
+    color: rgb(100, 100, 100);
+  }
+}

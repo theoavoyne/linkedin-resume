@@ -1,82 +1,90 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700,900');
 
 
-#content {
+* {
   font-family: 'Roboto';
   font-size: 10pt;
-  position: relative;
-  height: 26.7cm;
-}
-
-#header {
-  text-align: center;
-}
-
-#footer {
-  text-align: center;
-  margin-top: 3mm;
-  position: absolute;
-  bottom: 0;
-  width: 19cm;
-}
-
-#name {
-  font-weight: 900;
-  font-size: 20pt;
-  margin-bottom: 1mm;
-}
-
-#email {
-  font-weight: 400;
-  font-size: 12pt;
-  margin-bottom: 12mm;
-}
-
-#linkedin-link {
-  color: rgb(100, 100, 100);
-  font-size: 25pt;
-  margin-left: 2mm;
-  &:hover {
-    text-decoration: none;
-    color: rgb(100, 100, 100);
-  }
 }
 
 .bar {
   border-bottom: 0.3mm solid rgba(0, 0, 0, 0.9);
 }
 
-.title {
-  font-weight: 900;
-  font-size: 12pt;
-  margin: 5mm 0 3mm 0;
+// HEADER
+
+#header {
+  text-align: center;
+  height: 28mm;
 }
 
-// ELEMENTS
+#name {
+  font-weight: 900;
+  font-size: 20pt;
+  margin-bottom: 2mm;
+
+  // Limit the no. of lines to 1
+  line-height: 20pt;
+  height: 20pt;
+}
+
+#email {
+  font-weight: 400;
+  font-size: 12pt;
+
+  // Limit the no. of lines to 1
+  line-height: 12pt;
+  height: 12pt;
+}
+
+// SECTION
+
+.section {
+  margin-top: 5mm;
+  &:not(:last-child) { // The footer already take care of a certain margin.
+    margin-bottom: 5mm;
+  }
+}
+
+.section-title {
+  font-weight: 900;
+  font-size: 12pt;
+  margin-bottom: 3mm;
+}
+
+// ELEMENT
 
 .element {
   width: 19cm;
-  margin-bottom: 5mm;
   display: -webkit-box;
+  &:not(:last-child) {
+    margin-bottom: 5mm;
+  }
 }
 
 .date {
   width: 4cm;
   margin-right: 5mm;
-  left: 0;
-  font-size: 10pt;
 }
 
-.element-info {
+.element-content {
   width: 14.5cm;
 }
 
-.degree, .position {
+.degree, .title {
   font-weight: 500;
   margin-bottom: 2mm;
+
+  // Limit the no. of lines to 1
+  line-height: 10pt;
+  height: 10pt;
 }
 
-.institution {
+.school, .company {
   font-weight: 900;
   margin-bottom: 2mm;
+  overflow-wrap: break-word;
+
+  // Limit the no. of lines to 1
+  line-height: 10pt;
+  height: 10pt;
 }
