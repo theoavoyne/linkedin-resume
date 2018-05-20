@@ -23,8 +23,6 @@
   color: $background-banner;
   font-size: 22px;
   margin: 0;
-  // position: sticky;
-  // top: 70px;
   z-index: 9;
   .left-rectangle {
     height: 80px;
@@ -51,12 +49,6 @@
     color: #13BC06;
   }
 }
-
-// @media screen and (max-width: 991px) {
-//   .banner-geometric-shape {
-//     position: static;
-//   }
-// }
 
 // Geometric-shape (faking arrows)
 .left-rectangle, .middle-rectangle, .right-rectangle {
@@ -123,14 +115,6 @@
 .template-selected {
   border: 2px solid $color-button;
 }
-
-// .btn-inactive {
-//   cursor: no-drop !important;
-//   opacity: 0.5;
-//   &:hover {
-//     background-color: blue !important;
-//   }
-// }
 
 // Section reviews (Landing no logged in)
 .reviews {
