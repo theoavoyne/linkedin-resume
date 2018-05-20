@@ -103,6 +103,10 @@
   width: 252px;
   margin: 0 auto;
   background-size: cover;
+  cursor: pointer;
+  &:hover {
+    border: 2px solid $color-button;
+  }
 }
 
 .template-title {
@@ -110,6 +114,23 @@
   margin-top: 25px;
   font-weight: bold;
 }
+
+// Form templates
+.edit_user #user_template {
+  display: none;
+}
+
+.template-selected {
+  border: 2px solid $color-button;
+}
+
+// .btn-inactive {
+//   cursor: no-drop !important;
+//   opacity: 0.5;
+//   &:hover {
+//     background-color: blue !important;
+//   }
+// }
 
 // Section reviews (Landing no logged in)
 .reviews {

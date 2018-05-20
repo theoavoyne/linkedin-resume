@@ -36,35 +36,35 @@
 
 <!-- Resume templates -->
 
-<%= simple_form_for current_user do |f| %>
-  <%= f.button, :template collection_check_boxes('finance', 'tech') %>
-  <%= f.button :submit, value: 'View my new resume', class: 'custom-btn-big btn-to-editor' %>
-<% end %>
-
-<!--
 <div class="container section-templates">
   <h3 class="template-intro-title">Pick a template</h3>
   <div class="row carousel-templates">
     <div class="col-xs-12 col-sm-6 col-md-3">
-      <div class="template" style="background-image: url('<%= image_path "Resume.jpg"%>')"></div>
+      <div class="template" data-template="finance" style="background-image: url('<%= image_path "Resume.jpg"%>')"></div>
       <h4 class= "template-title">Finance</h4>
     </div>
     <div class="col-xs-12 col-sm-6 col-md-3">
-      <div class="template" style="background-image: url('<%= image_path "Resume.jpg"%>')"></div>
+      <div class="template" data-template="law" style="background-image: url('<%= image_path "Resume.jpg"%>')"></div>
       <h4 class= "template-title">Law</h4>
     </div>
     <div class="col-xs-12 col-sm-6 col-md-3">
-      <div class="template" style="background-image: url('<%= image_path "Resume.jpg"%>')"></div>
+      <div class="template" data-template="design" style="background-image: url('<%= image_path "Resume.jpg"%>')"></div>
       <h4 class= "template-title">Design</h4>
     </div>
     <div class="col-xs-12 col-sm-6 col-md-3">
-      <div class="template" style="background-image: url('<%= image_path "Resume.jpg"%>')"></div>
+      <div class="template" data-template="tech" style="background-image: url('<%= image_path "Resume.jpg"%>')"></div>
       <h4 class= "template-title">Tech</h4>
     </div>
   </div>
-  <%= link_to 'View my new resume', editor_path, class: 'custom-btn-big btn-to-editor' %>
+  <% if user_signed_in? %>
+    <%= simple_form_for current_user do |f| %>
+      <%= f.input :template, label: false %>
+      <%= f.button :submit, value: 'View my new resume', class: 'custom-btn-big btn-to-editor btn-inactive' %>
+    <% end %>
+  <% else %>
+    <%= link_to 'View my new resume', editor_path, class: 'custom-btn-big btn-to-editor' %>
+  <% end %>
 </div>
--->
 
 <!-- Reviews -->
 <div class="wrapper-light-blue">

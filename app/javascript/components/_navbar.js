@@ -6,7 +6,6 @@ function navBarColor() {
   var removePosition;
   if ( window.innerWidth < 991 ) {
     removePosition = -170;
-  console.log(removePosition);
   } else {
     removePosition = 70;
   }

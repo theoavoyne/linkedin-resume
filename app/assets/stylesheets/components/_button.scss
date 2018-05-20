@@ -36,4 +36,7 @@
 .btn-to-editor {
   width: fit-content;
   margin: 40px auto;
+  &:hover {
+    background-color: $color-button !important;
+  }
 }
