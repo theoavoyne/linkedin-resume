@@ -1,0 +1,44 @@
+#accordion {
+}
+
+.wrapper {
+  width: 100vw;
+  padding: 30px 50px;
+}
+
+.section {
+  &:not(:last-child) {
+    margin-bottom: 5px;
+  }
+}
+
+.section-header {
+  cursor: pointer;
+  background: rgb(100, 100, 100);
+  padding: 10px 25px;
+  display: flex;
+  color: white;
+}
+
+.position, .education, .skill {
+  padding: 10px;
+  background: rgb(230, 230, 230);
+  &:not(:last-child) {
+    margin-bottom: 15px;
+  }
+}
+
+#positions, #educations, #skills {
+  background: rgb(200, 200, 200);
+  padding: 15px 25px;
+}
+
+.degree, .title {
+  font-weight: 500;
+  overflow-wrap: break-word;
+}
+
+.school, .company, .skill-name {
+  font-weight: 900;
+  overflow-wrap: break-word;
+}
