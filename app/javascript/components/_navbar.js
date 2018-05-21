@@ -1,19 +1,11 @@
-const navbar = document.querySelector('.navbar-custom');
-const bannerGeometricShape = document.querySelector('.banner-geometric-shape');
-
-function navBarColor() {
-  var rect = bannerGeometricShape.getBoundingClientRect();
-  var removePosition;
-  if ( window.innerWidth < 991 ) {
-    removePosition = -170;
-  } else {
-    removePosition = 70;
-  }
-  if ( rect.top < 500 && rect.top > removePosition ) {
-    navbar.classList.add('navbar-is-gray');
-  } else {
-    navbar.classList.remove('navbar-is-gray');
-  }
-}
-
-window.addEventListener("scroll", navBarColor);
+$(document).ready(function(){
+  var scroll_pos = 0;
+  $(document).scroll(function() {
+    scroll_pos = $(this).scrollTop();
+    if(scroll_pos > 0) {
+      $('.navbar-custom').addClass('navbar-with-background');
+    } else {
+      $('.navbar-custom').removeClass('navbar-with-background');
+    }
+  });
+});
