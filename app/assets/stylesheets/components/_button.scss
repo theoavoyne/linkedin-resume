@@ -1,7 +1,7 @@
 // Main btn design
 .custom-btn-big, .custom-btn, .custom-btn-darker {
   display: block;
-  background-color: $color-button;
+  background-color: $orange;
   color: #fff;
   padding: 20px 30px;
   border-radius: 3px;
@@ -33,10 +33,11 @@
 }
 
 // Last Call to action below the templates
-.btn-to-editor {
+#btn-to-editor {
   width: fit-content;
-  margin: 40px auto;
+  margin: 0 auto;
+  margin-top: 40px;
   &:hover {
-    background-color: $color-button !important;
+    background-color: $orange !important;
   }
 }
