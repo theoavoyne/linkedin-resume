@@ -14,10 +14,11 @@
 
 .section-header {
   cursor: pointer;
-  background: rgb(100, 100, 100);
-  padding: 10px 25px;
+  background: $light-blue;
+  padding: 15px 25px;
   display: flex;
   color: white;
+  border-radius: 10px;
 }
 
 .position, .education, .skill {
