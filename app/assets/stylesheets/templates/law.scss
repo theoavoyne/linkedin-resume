@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700,900');
+
+
+/* GENERAL */
+* {
+  font-family: 'Roboto';
+  font-size: 10pt;
+}
+
+.section-title {
+  font-weight: 900;
+  font-size: 12pt;
+  margin: 3mm 0;
+}
+
+.bar {
+  border-bottom: 0.3mm solid rgba(0, 0, 0, 0.7);
+}
+
+.element {
+  margin-bottom: 6mm;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.degree, .title {
+  font-weight: 700;
+}
+
+.school, .company {
+  font-weight: 500;
+  margin-bottom: 2mm;
+}
+
+#vertical-bar {
+  height: 200mm;
+  position: absolute;
+  top: 42mm;
+  left: 67mm;
+  border-right: 0.3mm solid rgba(0, 0, 0, 0.7);
+}
+
+/* HEADER */
+#header {
+  text-align: center;
+  background-color: rgba(200,200,200,0.2);
+  padding: 1mm 0;
+}
+
+#fullname {
+  font-size: 35pt;
+}
+
+#headline {
+  font-weight: 500;
+}
+
+#name-underline {
+  border-bottom: 0.3mm solid rgba(0, 0, 0, 0.7);
+  width: 70pt;
+  margin: 0 auto;
+}
+
+.summary {
+  line-height: 12pt;
+}
+
+/* LEFT PART */
+#left-part {
+  width: 60mm;
+  float: left;
+  text-align: right;
+}
+
+/* RIGH PART */
+#right-part {
+  width: 110mm;
+  float: right;
+  padding-left: 5mm;
+}

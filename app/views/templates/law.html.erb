@@ -1,0 +1,60 @@
+<%= stylesheet_link_tag "templates/" + current_user.template, media: 'all' %>
+
+<div id="header">
+  <div id="fullname"><%= current_user.fullname.upcase %></div>
+  <div id="headline"><%= current_user.headline.capitalize %></div>
+  <div id="name-underline"></div>
+  <ul>
+    <li><%= current_user.location_name %></li>
+    <li><%= current_user.email %>&nbsp;&nbsp;<i class="far fa-envelope"></i></li>
+    <li><%= current_user.linkedin_profile_url %>&nbsp;&nbsp;<i class="fab fa-linkedin"></i></li>
+  </ul>
+</div>
+
+<!-- LEFT PART -->
+<div id="left-part">
+
+  <!-- SKILLS section -->
+  <div class="section-title">SKILLS</div>
+  <ul>
+    <% current_user.skills.each do |skill| %>
+      <li><%= skill.name %></li>
+    <% end %>
+  </ul>
+
+  <div class="bar"></div>
+
+  <!-- EDUCATION section -->
+  <div class="section-title">EDUCATION</div>
+  <% current_user.educations.each do |education| %>
+    <div class="element">
+      <div class="date"><%= education.start_date.strftime("%b %Y")%> - <%= education.end_date.strftime("%b %Y")%></div>
+      <div class="element-content">
+        <div class="degree"><%= education.degree.upcase %></div>
+        <div class="school"><%= education.school_name %></div>
+        <div class="summary"><%= education.notes %></div>
+      </div>
+    </div>
+  <% end %>
+
+</div>
+
+<div id="vertical-bar"></div>
+<!-- RIGHT PART -->
+<div id="right-part">
+
+  <!-- EXPERIENCE section-->
+  <div class="section-title">EXPERIENCE</div>
+  <% current_user.positions.each do |position| %>
+    <div class="element">
+      <div class="date"><%= position.start_date.strftime("%b %Y")%> - <%= position.is_current ? "Actual" : position.end_date.strftime("%b %Y")%></div>
+      <div class="element-content">
+        <div class="title"><%= position.title.upcase %></div>
+        <div class="company"><%= position.company_name %></div>
+        <div class="summary"><%= position.summary %></div>
+      </div>
+    </div>
+  <% end %>
+
+</div>
+
