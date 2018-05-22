@@ -2,7 +2,7 @@
 .socials-row {
   background-color: rgba(200, 200, 200, 0.1);
   padding: 30px 0;
-  color: $main-font-color;
+  color: $dark-gray;
   h3 {
     text-align: center;
     margin: 12.5px auto;
@@ -12,7 +12,7 @@
   };
   a {
     font-size: 36px;
-    color: $main-font-color;
+    color: $dark-gray;
     margin: 10px 20px 0 20px;
   }
 }
@@ -28,7 +28,7 @@
     color: $background-banner;
   }
   a {
-    color: $main-font-color;
+    color: $dark-gray;
     font-size: 16px;
   }
 }
@@ -44,5 +44,5 @@
   padding: 30px 0 15px 0;
   font-size: 14px;
   margin: 0;
-  color: $main-font-color;
+  color: $dark-gray;
 }

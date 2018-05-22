@@ -1,89 +1,85 @@
-<!-- Banner -->
+<!-- LANDING SECTION -->
 <div class="landing-wrapper">
   <div id="flex-banner">
     <% if user_signed_in? %>
       <h1>Welcome back <%= current_user.first_name %>!</h1>
-      <a href="#" id="scroll-to-pick-a-template" class="custom-btn-big">Create new resume</a>
+      <a href="#" class="custom-btn-big scroll-to-pick-a-template">Create new resume</a>
     <% else %>
-      <h1 class="landing-title">Resume Factory</h1>
-      <h2 class="landing-subtitle">Instantly create your resume with LinkedIn</h2>
+      <h1>Resume Factory</h1>
+      <h2>Instantly create your resume with LinkedIn</h2>
       <%= link_to 'Create my resume', user_linkedin_omniauth_authorize_path, class: 'custom-btn-big' %>
     <% end %>
   </div>
 </div>
 
-<!-- Steps -->
-<div class="row banner-geometric-shape">
-  <div class="col-xs-12 col-md-4 left-rectangle">
-    <!-- If user logged in, the first step is completed, so there is a tick
-    istead of 1 -->
+<!-- ARROW SECTION -->
+<div class="row">
+  <div class="col-xs-12 col-md-4 rectangle" id="left-rectangle">
     <span class="step">
-      <%= user_signed_in? ? content_tag(:i, "", class: ["fas", "fa-check"]) : 1 %>
+      <%= user_signed_in? ? content_tag(:i, "", class: ["fas", "fa-check", "green"]) : 1 %>
     </span>
-    <p>Login / Sign up</p>
+    <span class="rectangle-text">Login / Sign up</span>
   </div>
-  <div class="col-xs-12 col-md-4 middle-rectangle">
-    <span class="step">2</span>
-    <p>Pick a template</p>
-    <div class="triangle triangle-middle"></div>
+  <div class="col-xs-12 col-md-4 rectangle" id="center-rectangle">
+    <span class="step" id="step-2">2</span>
+    <span class="rectangle-text">Pick a template</span>
+    <div class="triangle" id="left-triangle"></div>
   </div>
-  <div class="col-xs-12 col-md-4 right-rectangle">
+  <div class="col-xs-12 col-md-4 rectangle" id="right-rectangle">
     <span class="step">3</span>
-    <p>Download your resume!</p>
-    <div class="triangle triangle-right"></div>
+    <span class="rectangle-text">Download your resume!</span>
+    <div class="triangle" id="center-triangle"></div>
   </div>
 </div>
 
-<!-- Resume templates -->
-<div class="container section-templates">
-  <h3 class="template-intro-title">Pick a template</h3>
-  <div class="row carousel-templates">
+<!-- RESUME SECTION -->
+
+<div class="wrapper-site">
+  <div class="row">
+    <h3 class="section-title">Pick a template</h3>
     <div class="col-xs-12 col-sm-6 col-md-3">
-      <div class="template" style="background-image: url('<%= image_path "Resume.jpg"%>')"></div>
+      <div class="template" data-template="finance" style="background-image: url('<%= image_path "Resume.jpg"%>')"></div>
       <h4 class= "template-title">Finance</h4>
     </div>
     <div class="col-xs-12 col-sm-6 col-md-3">
-      <div class="template" style="background-image: url('<%= image_path "Resume.jpg"%>')"></div>
+      <div class="template" data-template="law" style="background-image: url('<%= image_path "Resume.jpg"%>')"></div>
       <h4 class= "template-title">Law</h4>
     </div>
     <div class="col-xs-12 col-sm-6 col-md-3">
-      <div class="template" style="background-image: url('<%= image_path "Resume.jpg"%>')"></div>
+      <div class="template" data-template="design" style="background-image: url('<%= image_path "Resume.jpg"%>')"></div>
       <h4 class= "template-title">Design</h4>
     </div>
     <div class="col-xs-12 col-sm-6 col-md-3">
-      <div class="template" style="background-image: url('<%= image_path "Resume.jpg"%>')"></div>
+      <div class="template" data-template="tech" style="background-image: url('<%= image_path "Resume.jpg"%>')"></div>
       <h4 class= "template-title">Tech</h4>
     </div>
   </div>
-  <%= link_to 'View my new resume', editor_path, class: 'custom-btn-big btn-to-editor' %>
+  <% if user_signed_in? %>
+    <%= simple_form_for current_user do |f| %>
+      <%= f.input :template, label: false %>
+      <%= f.button :submit, value: 'View my new resume', class: 'custom-btn-big btn-inactive', id: "btn-to-editor" %>
+    <% end %>
+  <% else %>
+    <%= link_to 'View my new resume', editor_path, class: 'custom-btn-big', id: "btn-to-editor" %>
+  <% end %>
 </div>
 
-<!-- Reviews -->
-<div class="wrapper-light-blue">
-  <div class="container reviews">
-    <h3>They recommend us</h3>
-    <div class="row row-reviews">
-      <div class="col-xs-12 col-sm-4 review-column">
-        <div class="review">
-          <img src="https://randomuser.me/api/portraits/thumb/men/44.jpg" alt="#">
-          <p>"Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type."</p>
-          <p><strong>Bob - Web develper</strong></p>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-4 review-column">
-        <div class="review">
-          <img src="https://randomuser.me/api/portraits/thumb/men/44.jpg" alt="#">
-          <p>"Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type."</p>
-          <p><strong>Bob - Web develper</strong></p>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-4 review-column">
-        <div class="review">
-          <img src="https://randomuser.me/api/portraits/thumb/men/44.jpg" alt="#">
-          <p>"Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type."</p>
-          <p><strong>Bob - Web develper</strong></p>
-        </div>
-      </div>
+<!-- TWEETS SECTION -->
+
+<div class="wrapper-site wrapper-blue">
+  <div class="row">
+    <h3 class="section-title" id="tweets-section">They recommend us</h3>
+    <div class="col-xs-12 col-sm-4">
+      <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Recruiters on LinkedIn: &quot;I saw your work as a lead developer, it looks great! I think you&#39;d be a great fit for this entry-level email template developer position&quot;</p>&mdash; Kelly Vaughn (@kvlly) <a href="https://twitter.com/kvlly/status/998054447988269056?ref_src=twsrc%5Etfw">May 20, 2018</a></blockquote>
+      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Recruiters on LinkedIn: &quot;I saw your work as a lead developer, it looks great! I think you&#39;d be a great fit for this entry-level email template developer position&quot;</p>&mdash; Kelly Vaughn (@kvlly) <a href="https://twitter.com/kvlly/status/998054447988269056?ref_src=twsrc%5Etfw">May 20, 2018</a></blockquote>
+      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Recruiters on LinkedIn: &quot;I saw your work as a lead developer, it looks great! I think you&#39;d be a great fit for this entry-level email template developer position&quot;</p>&mdash; Kelly Vaughn (@kvlly) <a href="https://twitter.com/kvlly/status/998054447988269056?ref_src=twsrc%5Etfw">May 20, 2018</a></blockquote>
+      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>
   </div>
 </div>
