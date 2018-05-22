@@ -1,38 +1,37 @@
-<div class="footer">
-  <div class="socials-row">
-    <h3>Stay tuned</h3>
-    <div class="social-links">
-      <a href="#" target="_blank"><i class="fab fa-facebook-square"></i></a>
-      <a href="#" target="_blank"><i class="fab fa-linkedin-square"></i></a>
-    </div>
+<!-- SOCIAL SECTION -->
+
+<div class="wrapper-site" id="social-banner">
+  <h3 id="social-title">Stay tuned</h3>
+  <div>
+    <a href="#" target="_blank"><i class="fab fa-facebook-square social-link"></i></a>
+    <a href="#" target="_blank"><i class="fab fa-linkedin-square social-link"></i></a>
+    <a href="#" target="_blank"><i class="fab fa-twitter social-link"></i></a>
   </div>
-  <div class="footer-row wrapper-site">
-    <div class="col-xs-6 col-sm-3 footer-column">
-      <%= link_to root_path do %>
-        Resume Factory
-      <% end %>
-    </div>
-    <div class="col-xs-6 col-sm-3 footer-column">
+</div>
+
+<!-- FOOTER SECTION -->
+
+<div class="wrapper-site" id="footer-banner">
+  <div class="flex-center">
+    <div class="footer-section">
       <ul class="footer-list">
-        <h5>Get started</h5>
+        <h5 class="list-title">Get started</h5>
         <li><a href="#">Our templates</a></li>
         <li><%= link_to 'Create my resume', new_user_session_path %></li>
-        <% if user_signed_in? %>
-          <li><%= link_to 'My profile', profile_path %></li>
-        <% end %>
+        <li><%= link_to 'My profile', profile_path %></li>
       </ul>
     </div>
-    <div class="col-xs-6 col-sm-3 footer-column">
+    <div class="footer-section">
       <ul class="footer-list">
-        <h5>About</h5>
+        <h5 class="list-title">About</h5>
         <li><a href="#">Who we are</a></li>
         <li><a href="#">Contact us</a></li>
         <li><a href="#">Terms of service</a></li>
       </ul>
     </div>
-    <div class="col-xs-6 col-sm-3 footer-column">
+    <div class="footer-section">
       <ul class="footer-list">
-        <h5>Help</h5>
+        <h5 class="list-title">Help</h5>
         <li><a href="#">FAQ</a></li>
         <li><a href="#">Contact us</a></li>
       </ul>
