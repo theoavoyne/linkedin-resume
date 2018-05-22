@@ -17,8 +17,12 @@
   background: $light-blue;
   padding: 15px 25px;
   display: flex;
-  color: white;
+  color: $dark-gray;
   border-radius: 10px;
+}
+
+.opened-section {
+  border-radius: 10px 10px 0 0;
 }
 
 .position, .education, .skill {
