@@ -13,3 +13,25 @@
 @import "layouts/index";
 @import "components/index";
 @import "pages/index";
+
+// GENERAL
+
+.wrapper-site {
+  width: 100vw;
+  padding: 40px 140px;
+}
+
+.section-title {
+  margin-bottom: 40px;
+  margin-top: 0;
+  color: $dark-gray;
+}
+
+.wrapper-blue {
+  background-color: $light-blue;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+}
