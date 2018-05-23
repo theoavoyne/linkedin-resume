@@ -1,0 +1,17 @@
+#flex-banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 500px;
+  background-color: $background-banner;
+  h1, h2 {
+    color: #fff;
+  }
+  h2 {
+    font-size: 32px;
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+}

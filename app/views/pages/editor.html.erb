@@ -1,15 +1,33 @@
+<div id="top-banner">
+  <h1>Editor</h1>
+</div>
+
 <div class="wrapper">
-
   <div class="row">
-
     <div class="col-sm-6">
       <div class="accordion" id="accordion">
 
         <!-- PERSONNAL DETAILS -->
+        <div class="section">
+          <div class="collapsed section-header" type="button" data-toggle="collapse" data-target="#positions" aria-expanded="false" aria-controls="collapseOne">
+            <div>PERSONNAL DETAILS</div>
+          </div>
+          <div id="positions" class="collapse" aria-labelledby="positions" data-parent="#accordion">
+            <% current_user.positions.each do |position| %>
+              <div class="position" id="position-<%= position.id %>">
+                <div class="title"><%= position.title.upcase %></div>
+                <div class="company"><%= position.company_name %></div>
+                <div class="date"><%= position.start_date.strftime("%b %Y")%> - <%= position.is_current ? "Actual" : position.end_date.strftime("%b %Y")%></div>
+                <div class=""><%= position.summary %></div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+
 
         <!-- EXPERIENCE -->
         <div class="section">
-          <div class="collapsed section-header" type="button" data-toggle="collapse" data-target="#positions" aria-expanded="false" aria-controls="collapseOne">
+          <div class="collapsed section-header" type="button" data-toggle="collapse" data-target="#positions" aria-expanded="false" aria-controls="collapseTwo">
             <div>EXPERIENCE</div>
           </div>
           <div id="positions" class="collapse" aria-labelledby="positions" data-parent="#accordion">
@@ -26,7 +44,7 @@
 
         <!-- EDUCATION -->
         <div class="section">
-          <div class="collapsed section-header" type="button" data-toggle="collapse" data-target="#educations" aria-expanded="false" aria-controls="collapseTwo">
+          <div class="collapsed section-header" type="button" data-toggle="collapse" data-target="#educations" aria-expanded="false" aria-controls="collapseThree">
             <div>EDUCATION</div>
           </div>
           <div id="educations" class="collapse" aria-labelledby="educations" data-parent="#accordion">
@@ -43,7 +61,7 @@
 
         <!-- SKILLS -->
         <div class="section">
-          <div class="collapsed section-header" type="button" data-toggle="collapse" data-target="#skills" aria-expanded="false" aria-controls="collapseThree">
+          <div class="collapsed section-header" type="button" data-toggle="collapse" data-target="#skills" aria-expanded="false" aria-controls="collapseFour">
             <div>SKILLS</div>
           </div>
           <div id="skills" class="collapse" aria-labelledby="skills" data-parent="#accordion">
@@ -61,7 +79,7 @@
     <div class="col-sm-6">
       <embed width="630px" height="891px" src=<%= resume_path(format: :pdf) %>>
     </div>
-
   </div>
-
 </div>
+
+<%= javascript_pack_tag 'editor', media: 'all' %>
