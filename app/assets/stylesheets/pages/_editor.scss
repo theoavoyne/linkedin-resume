@@ -1,3 +1,5 @@
+// TOP BANNER
+
 #top-banner {
   display: flex;
   justify-content: center;
@@ -9,31 +11,97 @@
   }
 }
 
-#accordion {
+// ACCORDIN
+
+.section-header {
+  cursor: pointer;
+  background: $light-blue;
+  padding: 20px 25px;
+  display: flex;
+  color: $dark-gray;
+  border-radius: 10px;
+  transition: 0.2s;
+  transition-delay: 0.35s;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
+
+.opened-section {
+  border-radius: 10px 10px 0 0;
+  transition: none;
+}
+
+.section * {
+  color: $dark-gray;
+}
+
+.section-icon {
+  font-size: 25px;
+  margin-right: 15px;
+}
+
+.chevron {
+  font-size: 25px;
+  transition-delay: 0.35s;
+  transition: 0.2s;
+}
+
+.chevron-down {
+  transform: rotate(90deg);
+  transition-delay: 0s;
+}
+
+// PERSONNAL DETAILS
+
+#personnal-details {
+  background-color: white;
+  padding: 25px 25px;
+  border-radius: 0 0 10px 10px;
+  margin-bottom: 10px;
+}
+
+.personnal-flexbox {
+  display: flex;
+  &:not(:last-child) {
+    padding-bottom: 18px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid $light-gray;
+  }
+}
+
+#personnal-image {
+  height: 60px;
+  margin-right: 30px;
+  border-radius: 10px;
+}
+
+.personnal-box {
+  &:not(:last-child) {
+    margin-right: 50px;
+  }
+  h3, h4 {
+    margin: 0;
+  }
+}
+
+.label-name {
+  margin-bottom: 5px;
+  color: $background-banner;
+  font-size: 16px;
+}
+
+//
 
 .wrapper {
   width: 100vw;
-  padding: 30px 50px;
+  padding: 30px 100px;
 }
 
 .section {
   &:not(:last-child) {
     margin-bottom: 5px;
   }
-}
-
-.section-header {
-  cursor: pointer;
-  background: $light-blue;
-  padding: 15px 25px;
-  display: flex;
-  color: $dark-gray;
-  border-radius: 10px;
-}
-
-.opened-section {
-  border-radius: 10px 10px 0 0;
 }
 
 .position, .education, .skill {

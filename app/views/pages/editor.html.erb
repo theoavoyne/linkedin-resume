@@ -9,18 +9,41 @@
 
         <!-- PERSONNAL DETAILS -->
         <div class="section">
-          <div class="collapsed section-header" type="button" data-toggle="collapse" data-target="#positions" aria-expanded="false" aria-controls="collapseOne">
-            <div>PERSONNAL DETAILS</div>
+          <div class="collapsed section-header" type="button" data-toggle="collapse" data-target="#personnal-details" aria-expanded="false" aria-controls="collapseOne">
+            <div class="flex">
+              <i class="fas fa-user section-icon"></i>
+              <div>PERSONNAL DETAILS</div>
+            </div>
+            <i class="fas fa-chevron-right chevron"></i>
           </div>
-          <div id="positions" class="collapse" aria-labelledby="positions" data-parent="#accordion">
-            <% current_user.positions.each do |position| %>
-              <div class="position" id="position-<%= position.id %>">
-                <div class="title"><%= position.title.upcase %></div>
-                <div class="company"><%= position.company_name %></div>
-                <div class="date"><%= position.start_date.strftime("%b %Y")%> - <%= position.is_current ? "Actual" : position.end_date.strftime("%b %Y")%></div>
-                <div class=""><%= position.summary %></div>
+          <div id="personnal-details" class="collapse" aria-labelledby="personnal-details" data-parent="#accordion">
+            <div class="personnal-flexbox">
+              <img src="<%= current_user.linkedin_picture_url%>" id= "personnal-image" alt="">
+              <div class="personnal-box">
+                <p class="label-name">First name</p>
+                <h3 id="first-name"><%= current_user.first_name %></h3>
               </div>
-            <% end %>
+              <div class="personnal-box">
+                <p class="label-name">Last name</p>
+                <h3 id="last-name"><%= current_user.last_name %></h3>
+              </div>
+            </div>
+            <div class="personnal-flexbox">
+              <div class="personnal-box">
+                <p class="label-name">Headline</p>
+                <h4 id="location"><%= current_user.headline %></h4>
+              </div>
+            </div>
+            <div class="personnal-flexbox">
+              <div class="personnal-box">
+                <p class="label-name">From</p>
+                <h4 id="location"><%= current_user.location_name %></h4>
+              </div>
+              <div class="personnal-box">
+                <p class="label-name">Email Address</p>
+                <h4 id="email-address"><%= current_user.email %></h4>
+              </div>
+            </div>
           </div>
         </div>
 
