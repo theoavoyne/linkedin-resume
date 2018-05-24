@@ -20,7 +20,7 @@
     <div class="section-title">SKILLS</div>
     <ul>
       <% current_user.skills.each do |skill| %>
-        <li><%= skill.name %></li>
+        <li><%= skill.name %> <div class="skill-level-bar" style="width: 100pt"></div> 100%</li>
       <% end %>
     </ul>
   </div>
