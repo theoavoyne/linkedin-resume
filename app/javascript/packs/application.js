@@ -1,3 +1,8 @@
+//= require jquery
+//= require jquery_ujs
+//= require bootstrap-sprockets
+//= require_tree
+
 import "bootstrap";
 import "components/_navbar"
 import "components/_pick_template"

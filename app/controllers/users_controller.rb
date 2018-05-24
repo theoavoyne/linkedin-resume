@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
   def update
     authorize User.find(params[:id])
     if current_user.update(user_params)

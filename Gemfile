@@ -15,6 +15,7 @@ gem 'omniauth-linkedin'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf'
 gem 'wkhtmltopdf-binary'
+gem 'jquery-rails'
 
 gem 'faker'
 
