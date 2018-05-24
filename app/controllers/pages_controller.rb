@@ -8,6 +8,7 @@ class PagesController < ApplicationController
   end
 
   def editor
+    @user = current_user
   end
 
   def resume

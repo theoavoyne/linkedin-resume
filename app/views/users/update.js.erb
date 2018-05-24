@@ -1,0 +1,27 @@
+$(function(){
+
+  // UPDATING USER INFO
+
+  $('#first_name').html(<%= current_user.first_name %>);
+  $('#last_name').html(<%= current_user.last_name %>);
+  $('#headline').html(<%= current_user.headline %>);
+  $('#location').html(<%= current_user.headline %>);
+  $('#email-address').html(<%= current_user.email %>);
+
+  // HIDDING FORM
+
+  $('.form-control').css('display', 'none');
+
+  // DISPLAYING USER INFO
+  $('.section-attribute-value').children('h4').css('display', 'inline');
+
+  // STYLING
+
+  $('#edit-buttons').removeClass('last-section-row');
+  $('.section-row').eq(-2).addClass('last-section-row');
+
+  // DISPLAYING EDIT BUTTON
+
+  $('#edit-personnal-details').css('display', 'inline');
+
+});

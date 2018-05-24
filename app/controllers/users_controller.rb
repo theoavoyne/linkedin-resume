@@ -1,16 +1,22 @@
 class UsersController < ApplicationController
   def update
-    authorize current_user
+    authorize User.find(params[:id])
     if current_user.update(user_params)
-      redirect_to editor_path
+      respond_to do |format|
+        format.html { redirect_to editor_path }
+        format.js
+      end
     else
-      render root_path
+      respond_to do |format|
+        format.html { render '/editor' }
+        format.js
+      end
     end
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:template)
+    params.require(:user).permit(:template, :first_name, :last_name, :headline, :location_name, :email)
   end
 end

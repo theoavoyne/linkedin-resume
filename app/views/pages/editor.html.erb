@@ -2,106 +2,93 @@
   <h1>Editor</h1>
 </div>
 
-<div class="wrapper">
+<div id="editor-wrapper">
   <div class="row">
     <div class="col-sm-6">
       <div class="accordion" id="accordion">
 
         <!-- PERSONNAL DETAILS -->
         <div class="section">
+
+          <!-- SECTION HEADER -->
           <div class="collapsed section-header" type="button" data-toggle="collapse" data-target="#personnal-details" aria-expanded="false" aria-controls="collapseOne">
-            <div class="flex">
+            <div class="display-flex">
               <i class="fas fa-user section-icon"></i>
               <div>PERSONNAL DETAILS</div>
             </div>
             <i class="fas fa-chevron-right chevron"></i>
           </div>
-          <div id="personnal-details" class="collapse" aria-labelledby="personnal-details" data-parent="#accordion">
-            <div class="personnal-flexbox">
-              <img src="<%= current_user.linkedin_picture_url%>" id= "personnal-image" alt="">
-              <div class="personnal-box">
-                <p class="label-name">First name</p>
-                <h3 id="first-name"><%= current_user.first_name %></h3>
-              </div>
-              <div class="personnal-box">
-                <p class="label-name">Last name</p>
-                <h3 id="last-name"><%= current_user.last_name %></h3>
-              </div>
-            </div>
-            <div class="personnal-flexbox">
-              <div class="personnal-box">
-                <p class="label-name">Headline</p>
-                <h4 id="location"><%= current_user.headline %></h4>
-              </div>
-            </div>
-            <div class="personnal-flexbox">
-              <div class="personnal-box">
-                <p class="label-name">From</p>
-                <h4 id="location"><%= current_user.location_name %></h4>
-              </div>
-              <div class="personnal-box">
-                <p class="label-name">Email Address</p>
-                <h4 id="email-address"><%= current_user.email %></h4>
-              </div>
-            </div>
-          </div>
-        </div>
 
+          <!-- SECTION CONTENT -->
+          <div id="personnal-details" class="collapse section-content" aria-labelledby="personnal-details" data-parent="#accordion">
 
-        <!-- EXPERIENCE -->
-        <div class="section">
-          <div class="collapsed section-header" type="button" data-toggle="collapse" data-target="#positions" aria-expanded="false" aria-controls="collapseTwo">
-            <div>EXPERIENCE</div>
-          </div>
-          <div id="positions" class="collapse" aria-labelledby="positions" data-parent="#accordion">
-            <% current_user.positions.each do |position| %>
-              <div class="position" id="position-<%= position.id %>">
-                <div class="title"><%= position.title.upcase %></div>
-                <div class="company"><%= position.company_name %></div>
-                <div class="date"><%= position.start_date.strftime("%b %Y")%> - <%= position.is_current ? "Actual" : position.end_date.strftime("%b %Y")%></div>
-                <div class=""><%= position.summary %></div>
+            <%= simple_form_for(@user, remote: true) do |f| %>
+
+              <div class="section-row">
+                <img src="<%= current_user.linkedin_picture_url%>" id= "personnal-image" alt="">
+                <div class="section-attribute">
+                  <p class="label-name">First name</p>
+                  <div class="section-attribute-value">
+                    <h4 id="first-name"><%= current_user.first_name %></h4>
+                    <%= f.input :first_name, required: true, label: false, autofocus: true %>
+                  </div>
+                </div>
+                <div class="section-attribute">
+                  <p class="label-name">Last name</p>
+                  <div class="section-attribute-value">
+                    <h4 id="last-name"><%= current_user.last_name %></h4>
+                    <%= f.input :last_name, required: true, label: false %>
+                  </div>
+                </div>
               </div>
+
+              <div class="section-row">
+                <div class="section-attribute">
+                  <p class="label-name">Headline</p>
+                  <div class="section-attribute-value">
+                    <h4 id="headline"><%= current_user.headline %></h4>
+                    <%= f.input :headline, required: false, label: false, :as => "string" %>
+                  </div>
+                </div>
+              </div>
+
+              <div class="section-row last-section-row">
+                <div class="section-attribute">
+                  <p class="label-name">From</p>
+                  <div class="section-attribute-value">
+                    <h4 id="location"><%= current_user.location_name %></h4>
+                    <%= f.input :location_name, required: false, label: false %>
+                  </div>
+                </div>
+                <div class="section-attribute">
+                  <p class="label-name">Email Address</p>
+                  <div class="section-attribute-value">
+                    <h4 id="email-address"><%= current_user.email %></h4>
+                    <%= f.input :email, required: false, label: false %>
+                  </div>
+                </div>
+              </div>
+
+              <div id="edit-buttons" class="section-row">
+                <div class="form-actions">
+                  <%= f.button :submit, "Save changes", id: "save-button" %>
+                </div>
+              </div>
+
             <% end %>
-          </div>
-        </div>
 
-        <!-- EDUCATION -->
-        <div class="section">
-          <div class="collapsed section-header" type="button" data-toggle="collapse" data-target="#educations" aria-expanded="false" aria-controls="collapseThree">
-            <div>EDUCATION</div>
-          </div>
-          <div id="educations" class="collapse" aria-labelledby="educations" data-parent="#accordion">
-            <% current_user.educations.each do |education| %>
-              <div class="education" id="education-<%= education.id %>">
-                <div class="degree"><%= education.degree.upcase %></div>
-                <div class="school"><%= education.school_name %></div>
-                <div class="date"><%= education.start_date.strftime("%b %Y")%> - <%= education.end_date.strftime("%b %Y")%></div>
-                <div class=""><%= education.notes %></div>
-              </div>
-            <% end %>
-          </div>
-        </div>
+            <i id="edit-personnal-details" class="fas fa-pencil-alt"></i>
 
-        <!-- SKILLS -->
-        <div class="section">
-          <div class="collapsed section-header" type="button" data-toggle="collapse" data-target="#skills" aria-expanded="false" aria-controls="collapseFour">
-            <div>SKILLS</div>
           </div>
-          <div id="skills" class="collapse" aria-labelledby="skills" data-parent="#accordion">
-            <% current_user.skills.each do |skill| %>
-              <div class="skill" id="skills-<%= skill.id %>">
-                <div class="skill-name"><%= skill.name %></div>
-              </div>
-            <% end %>
-          </div>
-        </div>
 
+        </div>
       </div>
     </div>
 
     <div class="col-sm-6">
       <embed width="630px" height="891px" src=<%= resume_path(format: :pdf) %>>
     </div>
+
   </div>
 </div>
 

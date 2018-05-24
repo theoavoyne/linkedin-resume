@@ -1,11 +1,18 @@
 $(document).ready(function(){
   $('.section-header').click(function() {
     if ($(this).attr("aria-expanded") == "true") {
-      $(this).removeClass('opened-section');
+      $(this).removeClass('section-header-selected');
       $(this).children('i').removeClass('chevron-down');
     } else {
-      $(this).addClass('opened-section');
+      $(this).addClass('section-header-selected');
       $(this).children('i').addClass('chevron-down');
     };
+  });
+  $('#edit-personnal-details').click(function() {
+    $(this).css('display', "none");
+    $('.section-attribute-value').children('h4').css('display', "none");
+    $('.form-control').css('display', "inline");
+    $('.last-section-row').removeClass('last-section-row');
+    $('#edit-buttons').addClass('last-section-row')
   });
 });
