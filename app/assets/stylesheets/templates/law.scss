@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700,900');
 
-
 /* GENERAL */
 * {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -37,7 +36,7 @@ ul {
 }
 
 #avatar {
-  margin: 15mm 5mm;
+  margin: 15mm 7.5mm;
   width: 40mm;
   border-radius: 50%;
 }
@@ -47,14 +46,19 @@ ul {
   text-align: center;
 }
 
-#skills {
-  margin-top: 10mm;
+#list-skills li {
+  margin-bottom: 5pt;
+}
+.skill-level-bar-100 {
+  width: 100pt;
+  background-color: rgb(230,230,230);
 }
 
 .skill-level-bar {
-  height: 10pt;
-  background-color: #000;
+  height: 7pt;
+  background-color: #c57c64;
 }
+
 
 /* RIGH PART */
 #right-part {

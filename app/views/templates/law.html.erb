@@ -16,14 +16,17 @@
   <div class="bar"></div>
 
   <!-- SKILLS section -->
-  <div id="skills">
-    <div class="section-title">SKILLS</div>
-    <ul>
-      <% current_user.skills.each do |skill| %>
-        <li><%= skill.name %> <div class="skill-level-bar" style="width: 100pt"></div> 100%</li>
-      <% end %>
-    </ul>
-  </div>
+  <div class="section-title">SKILLS</div>
+  <ul id="list-skills">
+    <% current_user.skills.each do |skill| %>
+      <li><%= skill.name %> <%= (skill.level * 100).round %>%
+        <div class="skill-level-bar-100">
+          <div class="skill-level-bar"
+            style="width: <%= skill.level * 100 %>pt"></div>
+        </div>
+      </li>
+    <% end %>
+  </ul>
 </div>
 
 <!-- RIGHT PART -->
