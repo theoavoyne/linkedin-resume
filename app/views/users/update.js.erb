@@ -1,17 +1,17 @@
 // UPDATING USER INFO
 
-$('#first-name').find('h4').text("<%= current_user.first_name %>");
-$('#last-name').find('h4').text("<%= current_user.last_name %>");
-$('#headline').find('h4').text("<%= current_user.headline %>");
-$('#location').find('h4').text("<%= current_user.location_name %>");
-$('#email-address').find('h4').text("<%= current_user.email %>");
+$('#first-name').text("<%= current_user.first_name %>");
+$('#last-name').text("<%= current_user.last_name %>");
+$('#headline').text("<%= current_user.headline %>");
+$('#location').text("<%= current_user.location_name %>");
+$('#email-address').text("<%= current_user.email %>");
 
 // HIDDING FORM
 
 $('.form-control').css('display', 'none');
 
 // DISPLAYING USER INFO
-$('.section-attribute-value').children('h4').css('display', 'block');
+$('#personnal-details').find('.section-attribute-value').css('display', 'block');
 
 // STYLING
 

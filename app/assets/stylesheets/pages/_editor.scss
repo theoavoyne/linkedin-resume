@@ -20,7 +20,7 @@
 
 .section {
   &:not(:last-child) {
-    margin-bottom: 5px; // Margin separing sections
+    margin-bottom: 10px; // Margin separing sections
   }
   * {
     color: $dark-gray;
@@ -98,11 +98,7 @@
 }
 
 .section-attribute-value {
-  height: 25px;
-  h4 {
-    height: 25px;
-    overflow: scroll;
-  }
+  word-break: break-all;
 }
 
 .label-name {
@@ -127,7 +123,7 @@
   border-radius: 10px;
 }
 
-#edit-buttons {
+#personnal-edit-buttons {
   display: none;
 }
 
@@ -138,15 +134,15 @@
   margin-top: 8px;
 }
 
-#first-name h4, #last-name h4 {
+#first-name, #last-name {
   max-width: 207.5px;
 }
 
-#headline h4 {
+#headline {
   max-width: 555px;
 }
 
-#location h4, #email-address h4 {
+#location, #email-address {
   max-width: 252.5px;
 }
 

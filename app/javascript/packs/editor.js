@@ -9,9 +9,9 @@ $(document).ready(function(){
     };
   });
   $('#edit-personnal-details').click(function() {
-    $(this).css('display', "none");
-    $('.section-attribute-value').children('h4').css('display', "none");
-    $('.form-control').css('display', "block");
+    $(this).css('display', 'none');
+    $('#personnal-details').find('.section-attribute-value').css('display', 'none');
+    $('.form-control').css('display', 'block');
     $('.last-section-row').removeClass('last-section-row');
     $('#edit-buttons').addClass('last-section-row')
   });

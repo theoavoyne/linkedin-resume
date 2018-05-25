@@ -1,0 +1,37 @@
+<!-- SECTION HEADER -->
+<div class="collapsed section-header" type="button" data-toggle="collapse" data-target="#skills" aria-expanded="false" aria-controls="collapseTwo">
+  <div class="display-flex">
+    <i class="fas fa-bolt section-icon"></i>
+    <div>SKILLS</div>
+  </div>
+  <i class="fas fa-chevron-right chevron"></i>
+</div>
+
+<!-- SECTION CONTENT -->
+<div id="skills" class="collapse section-content" aria-labelledby="skills" data-parent="#accordion">
+
+  <% skills.each do |skill| %>
+
+    <%= simple_form_for(skill, remote: true) do |f| %>
+
+      <div class="section-row">
+
+        <div class="skill"><%= skill.name %></div>
+        <%= f.input :name, required: false, label: false %>
+
+        <div id="skills-edit-buttons" class="section-row">
+        <div class="form-actions">
+          <%= f.button :submit, "Save changes", id: "skills-save-button" %>
+        </div>
+
+      </div>
+
+      </div>
+
+    <% end %>
+
+  <% end %>
+
+  <i id="edit-personnal-details" class="fas fa-pencil-alt"></i>
+</div>
+
