@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
   def update
-    current_user
     authorize current_user
     if current_user.update(user_params)
       redirect_to editor_path
