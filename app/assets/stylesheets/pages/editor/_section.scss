@@ -22,8 +22,8 @@
   justify-content: space-between;
 }
 
-.section-header-selected {
-  border-radius: 10px 10px 0 0;
+.section-header-selected { // When section is clicked
+  border-radius: 10px 10px 0 0; // Remove bottom border radius
   transition: none;
 }
 
@@ -60,14 +60,14 @@
   border-bottom: 1px solid $light-gray;
 }
 
-.last-section-row {
+.last-section-row { // Override .section-row
   display: flex !important;
   padding-bottom: 0;
   margin-bottom: 0;
   border-bottom: none;
 }
 
-.section-attribute {
+.section-attribute { // Contain the label name and the value
   &:not(:last-child) {
     margin-right: 50px;
   }

@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :users, only: [ :update ]
-  resources :skills, only: [ :update, :create ]
+  resources :skills, only: [ :update, :create, :destroy ]
 
   get '/profile', to: "pages#profile", as: 'profile'
   get '/editor', to: "pages#editor", as: 'editor'

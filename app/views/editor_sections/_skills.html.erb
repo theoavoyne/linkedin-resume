@@ -10,37 +10,27 @@
 <!-- SECTION CONTENT -->
 <div id="skills" class="collapse section-content" aria-labelledby="skills" data-parent="#accordion">
 
-  <div id="skills-flex">
+  <p class="border-bottom">The skills recruiters look for when they scan through resumes depend on the type of position they're trying to fill. For example, if you're applying for a position that requires technical knowledge, include specific examples of technology or equipment you use, even if it could be reasonably assumed you must know these things. </p>
+  <h2 class="content-header" id="your-skills">Your skills (<%= skills.length %>)</h2>
+
+  <div id="skills-flex" class="border-bottom">
 
     <% skills.each do |skill| %>
 
-      <%= simple_form_for(skill, remote: true) do |f| %>
-
-        <div class="skill" id="skill-<%= skill.id %>">
-
-          <div class="skill-name"><%= skill.name %></div>
-          <%= f.input :name, required: false, label: false %>
-
-          <div class="form-actions">
-            <%= f.button :submit, "Save", class: "skills-save-button" %>
-          </div>
-
-          <i skill-id="<%= skill.id %>" class="fas fa-pencil-alt edit-skill"></i>
-
-        </div>
-
-      <% end %>
+      <%= render 'shared/skill', skill: skill %>
 
     <% end %>
 
   </div>
 
-  <h2 id="new-skill-header">Add a new skill</h2>
-  <div id="new-skill">
-    <div id="plus">
-      <i class="fas fa-plus"></i>
+  <h2 class="content-header">Add a new skill</h2>
+  <%= link_to skills_path, method: :post, remote: true do %>
+    <div id="new-skill">
+      <div id="plus-symbol">
+        <i class="fas fa-plus"></i>
+      </div>
     </div>
-  </div>
+  <% end %>
 
 </div>
 

@@ -7,8 +7,6 @@
   padding: 30px 100px;
 }
 
-// TOP BANNER
-
 #top-banner {
   display: flex;
   justify-content: center;
@@ -20,8 +18,17 @@
   }
 }
 
-.form-group {
+.form-group { // Override simple_form style
   margin: 0;
 }
 
+.content-header {
+  font-size: 23px;
+  margin: 0 0 10px 0;
+}
 
+.border-bottom { // Add this class to separate a row from another
+  padding-bottom: 18px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid $light-gray;
+}

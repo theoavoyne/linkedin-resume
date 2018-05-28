@@ -9,7 +9,7 @@ class PagesController < ApplicationController
 
   def editor
     @user = current_user
-    @skills = current_user.skills
+    @skills = current_user.skills.order(:created_at)
   end
 
   def resume
