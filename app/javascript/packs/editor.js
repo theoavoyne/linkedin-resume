@@ -11,8 +11,15 @@ $(document).ready(function(){
   $('#edit-personnal-details').click(function() {
     $(this).css('display', 'none');
     $('#personnal-details').find('.section-attribute-value').css('display', 'none');
-    $('.form-control').css('display', 'block');
-    $('.last-section-row').removeClass('last-section-row');
-    $('#edit-buttons').addClass('last-section-row')
+    $('#personnal-details').find('.form-control').css('display', 'block');
+    $('#personnal-details').find('.last-section-row').removeClass('last-section-row');
+    $('#personnal-edit-buttons').addClass('last-section-row')
+  });
+  $('.edit-skill').click(function() {
+    var skill_id = $(this).attr("skill-id");
+    $(this).css('display', 'none');
+    $(`#skill-${skill_id}`).find('.form-control').css('display', 'block');
+    $(`#skill-${skill_id}`).find('.skills-save-button').css('display', 'block');
+    $(`#skill-${skill_id}`).find('.skill-name').css('display', 'none');
   });
 });

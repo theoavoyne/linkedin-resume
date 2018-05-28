@@ -1,0 +1,5 @@
+$(`#skill-<%= @skill.id %>`).find('.skill-name').text("<%= @skill.name %>");
+$(`#skill-<%= @skill.id %>`).find('.form-control').css('display', 'none');
+$(`#skill-<%= @skill.id %>`).find('.skills-save-button').css('display', 'none');
+$(`#skill-<%= @skill.id %>`).find('.skill-name').css('display', 'block');
+$(`#skill-<%= @skill.id %>`).find('.edit-skill').css('display', 'block');

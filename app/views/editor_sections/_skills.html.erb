@@ -10,28 +10,37 @@
 <!-- SECTION CONTENT -->
 <div id="skills" class="collapse section-content" aria-labelledby="skills" data-parent="#accordion">
 
-  <% skills.each do |skill| %>
+  <div id="skills-flex">
 
-    <%= simple_form_for(skill, remote: true) do |f| %>
+    <% skills.each do |skill| %>
 
-      <div class="section-row">
+      <%= simple_form_for(skill, remote: true) do |f| %>
 
-        <div class="skill"><%= skill.name %></div>
-        <%= f.input :name, required: false, label: false %>
+        <div class="skill" id="skill-<%= skill.id %>">
 
-        <div id="skills-edit-buttons" class="section-row">
-        <div class="form-actions">
-          <%= f.button :submit, "Save changes", id: "skills-save-button" %>
+          <div class="skill-name"><%= skill.name %></div>
+          <%= f.input :name, required: false, label: false %>
+
+          <div class="form-actions">
+            <%= f.button :submit, "Save", class: "skills-save-button" %>
+          </div>
+
+          <i skill-id="<%= skill.id %>" class="fas fa-pencil-alt edit-skill"></i>
+
         </div>
 
-      </div>
-
-      </div>
+      <% end %>
 
     <% end %>
 
-  <% end %>
+  </div>
 
-  <i id="edit-personnal-details" class="fas fa-pencil-alt"></i>
+  <h2 id="new-skill-header">Add a new skill</h2>
+  <div id="new-skill">
+    <div id="plus">
+      <i class="fas fa-plus"></i>
+    </div>
+  </div>
+
 </div>
 

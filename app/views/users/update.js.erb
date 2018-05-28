@@ -8,15 +8,15 @@ $('#email-address').text("<%= current_user.email %>");
 
 // HIDDING FORM
 
-$('.form-control').css('display', 'none');
+$('#personnal-details').find('.form-control').css('display', 'none');
 
 // DISPLAYING USER INFO
 $('#personnal-details').find('.section-attribute-value').css('display', 'block');
 
 // STYLING
 
-$('#edit-buttons').removeClass('last-section-row');
-$('.section-row').eq(-2).addClass('last-section-row');
+$('#personnal-edit-buttons').removeClass('last-section-row');
+$('#personnal-details').find('.section-row').eq(-2).addClass('last-section-row');
 
 // DISPLAYING EDIT BUTTON
 

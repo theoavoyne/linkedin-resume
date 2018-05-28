@@ -9,6 +9,7 @@ class PagesController < ApplicationController
 
   def editor
     @user = current_user
+    @skills = current_user.skills
   end
 
   def resume
