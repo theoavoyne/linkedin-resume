@@ -4,7 +4,7 @@
 
 #editor-wrapper {
   width: 100vw;
-  padding: 30px 100px;
+  padding: 30px 2vw;
 }
 
 #top-banner {
@@ -21,11 +21,6 @@
 
 .form-group { // Override simple_form style
   margin: 0;
-}
-
-.content-header {
-  font-size: 23px;
-  margin: 0 0 10px 0;
 }
 
 .border-bottom { // Add this class to separate a row from another

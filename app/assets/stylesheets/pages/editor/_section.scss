@@ -6,6 +6,7 @@
   }
   * {
     color: $dark-gray;
+    hyphens: auto;
   }
 }
 
@@ -47,9 +48,20 @@
 
 .section-content {
   background-color: white;
-  padding: 25px;
+  padding: 25px 2vw;
   border-radius: 0 0 10px 10px;
   position: relative;
+}
+
+@media screen and (max-width: 767px) {
+  .section-content {
+    padding: 25px 4vw; // Change left/right padding from 2 to 4
+  }
+}
+
+.content-header {
+  font-size: 23px;
+  margin: 18px 0;
 }
 
 .section-row {
@@ -69,15 +81,11 @@
 
 .section-attribute { // Contain the label name and the value
   &:not(:last-child) {
-    margin-right: 50px;
+    margin-right: 3vw;
   }
   h4 {
     margin: 0;
   }
-}
-
-.section-attribute-value {
-  word-break: break-all;
 }
 
 .label-name {

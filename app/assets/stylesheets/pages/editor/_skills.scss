@@ -14,7 +14,6 @@
   padding: 15px 20px;
   border-radius: 10px;
   margin-bottom: 5px;
-  width: 275px;
   margin: 2.5px;
 }
 
@@ -22,6 +21,7 @@
   margin: 0;
   font-size: 17px;
   color: white;
+  max-width: calc(100% - 66px);
 }
 
 .skill-icon { // Edit and delete icons
@@ -94,4 +94,18 @@
   margin: 0;
   display: none;
   width: 175px;
+}
+
+.edit_skill {
+  width: 50%;
+}
+
+@media screen and (max-width: 540px) {
+  .edit_skill {
+    width: 100%; // Stay equal to parent section's right padding
+  }
+  #skills-flex {
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
 }

@@ -1,5 +1,5 @@
 // REMOVE SKILL FROM LIST
-$('#skill-<%= @skill.id %>').remove()
+$('#skill-<%= @skill.id %>').parent().remove()
 
 // UPDATING NO. OF SKILLS
 $('#your-skills').text("Your skills (<%= current_user.skills.length %>)");
