@@ -1,0 +1,8 @@
+<div class="inlist-position" id="inlist-position-<%= position.id %>">
+
+  <div class="inlist-postion-company"><%= position.company_name %></div>
+
+  <%= link_to position_path(position), method: :delete, data: { confirm: "Are you sure?" }, remote: :true do %>
+    <i class="fas fa-trash-alt inlist-position-icon"></i>
+  <% end %>
+</div>

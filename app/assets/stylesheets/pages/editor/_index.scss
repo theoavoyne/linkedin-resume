@@ -1,6 +1,7 @@
 @import "personnal_details";
 @import "section";
 @import "skills";
+@import "positions";
 
 #editor-wrapper {
   width: 100vw;
@@ -27,4 +28,38 @@
   padding-bottom: 18px;
   margin-bottom: 10px;
   border-bottom: 1px solid $light-gray;
+}
+
+.plus-symbol {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 3px solid rgb(190, 190, 190);
+  padding: 5px;
+  i {
+    color: rgb(190, 190, 190);
+    font-size: 14px;
+  }
+}
+
+.new-element {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 10px;
+  height: 50px;
+  border: 3px dashed rgb(190, 190, 190);
+  &:hover {
+    background-color: $light-blue;
+    border: none;
+    #plus-symbol {
+      border: 3px solid white;
+      i {
+        color: white;
+      }
+    }
+  }
 }

@@ -1,0 +1,42 @@
+<!-- SECTION HEADER -->
+<div class="collapsed section-header" type="button" data-toggle="collapse" data-target="#positions" aria-expanded="false" aria-controls="collapseThree">
+  <div class="display-flex">
+    <i class="fas fa-file-alt section-icon"></i>
+    <div>EMPLOYMENT</div>
+  </div>
+  <i class="fas fa-chevron-right chevron"></i>
+</div>
+
+<!-- SECTION CONTENT -->
+<div id="positions" class="collapse section-content" aria-labelledby="positions" data-parent="#accordion">
+
+  <p class="border-bottom">Describe your responsibilities in concise statements led by strong verbs. Focus on those skills and strengths that you possess and that you have identified as being important to your field. Try to incorporate industry specific key words. Show potential employers exactly how you will fit their position and their company. </p>
+  <h2 class="content-header" id="your-positions">Your positions (<%= @positions.length %>)</h2>
+
+  <div id="positions-flex">
+
+    <% @positions.each do |position| %>
+
+      <%= render 'shared/inlist_position', position: position %>
+
+    <% end %>
+
+  </div>
+
+  <div id="position-selected" class="border-bottom">
+
+    <%= render 'shared/position', position: @positions.first %>
+
+  </div>
+
+  <h2 class="content-header">Add a new position</h2>
+  <%= link_to positions_path, method: :post, remote: true do %>
+    <div id="new-position" class="new-element">
+      <div class="plus-symbol">
+        <i class="fas fa-plus"></i>
+      </div>
+    </div>
+  <% end %>
+
+</div>
+

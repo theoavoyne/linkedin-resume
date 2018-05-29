@@ -1,0 +1,41 @@
+#positions-flex {
+  display: flex;
+  margin: -2.5px -2.5px 22.5px -2.5px;
+  flex-wrap: wrap;
+}
+
+.inlist-position {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $blue;
+  padding: 15px 20px;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  margin: 2.5px;
+  width: calc(50% - 5px);
+}
+
+.inlist-postion-company {
+  margin: 0;
+  font-size: 17px;
+  color: white;
+}
+
+.inlist-position-icon {
+  color: white;
+}
+
+.company-logo {
+  height: 60px;
+  margin-right: 2vw;
+}
+
+#positions .form-control.string {
+  height: 25px !important;
+}
+
+#positions .form-control {
+  display: none;
+  font-size: 18px;
+}

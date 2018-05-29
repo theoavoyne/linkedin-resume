@@ -1,0 +1,33 @@
+<%= simple_form_for(position, remote: true) do |f| %>
+
+  <div class="gray-section-row" id="experience-first-row">
+    <img src="<%= position.company_ticker_url %>" class= "company-logo" alt="">
+    <div class="section-attribute">
+      <p class="label-name">Company</p>
+      <h4 class="section-attribute-value title"><%= position.company_name %></h4>
+      <%= f.input :company_name, required: true, label: false %>
+    </div>
+  </div>
+
+  <div class="gray-section-row" id="experience-second-row">
+    <div class="section-attribute">
+      <p class="label-name">Title</p>
+      <h4 class="section-attribute-value title"><%= position.title %></h4>
+      <%= f.input :title, required: true, label: false %>
+    </div>
+    <div class="section-attribute">
+      <p class="label-name">Date</p>
+      <h4 class="section-attribute-value start_date"><%= position.start_date.strftime("%b %Y") %> - <%= position.is_current ? "Today" : position.end_date.strftime("%b %Y")%></h4>
+      <%= f.input :start_date, required: true, label: false %>
+    </div>
+  </div>
+
+  <div class="gray-section-row" class="experience-last-row">
+    <div class="section-attribute">
+      <p class="label-name">Summary</p>
+      <p class="section-attribute-value summary"><%= position.summary %></p>
+      <%= f.input :summary, required: true, label: false, autofocus: true %>
+    </div>
+  </div>
+
+<% end %>

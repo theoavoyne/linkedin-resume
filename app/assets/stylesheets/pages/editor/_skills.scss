@@ -52,26 +52,7 @@
 
 // NEW SKILL BUTTON
 
-#new-skill {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  border-radius: 10px;
-  height: 50px;
-  border: 3px dashed rgb(190, 190, 190);
-  &:hover {
-    background-color: $light-blue;
-    border: none;
-    #plus-symbol {
-      border: 3px solid white;
-      i {
-        color: white;
-      }
-    }
-  }
-}
-
-#plus-symbol {
+.plus-symbol {
   height: 30px;
   width: 30px;
   border-radius: 50%;

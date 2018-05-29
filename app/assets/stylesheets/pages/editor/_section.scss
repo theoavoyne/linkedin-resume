@@ -8,6 +8,9 @@
     color: $dark-gray;
     hyphens: auto;
   }
+  p {
+    margin: 0;
+  }
 }
 
 // SECTION HEADER
@@ -70,6 +73,16 @@
   padding-bottom: 18px;
   margin-bottom: 10px;
   border-bottom: 1px solid $light-gray;
+}
+
+.gray-section-row {
+  display: flex;
+  align-items: center;
+  padding: 25px 2vw;
+  background-color: $light-gray;
+  &:not(:last-child) {
+    margin: 1px;
+  }
 }
 
 .last-section-row { // Override .section-row
