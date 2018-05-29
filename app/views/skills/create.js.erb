@@ -1,0 +1,21 @@
+// ADD THE SKILL IN THE LIST
+$('#skills-flex').append('<%= j render "shared/skill", skill: @new_skill %>')
+
+// MAKING THE SKILL EDITABLE
+$('#skill-<%= @new_skill.id %>').find('.edit-skill').click(function() {
+
+  // HIDE SKILL NAME AND ICONS
+  $('#skill-<%= @new_skill.id %>').find('.skill-name').css('display', 'none');
+  $('#skill-<%= @new_skill.id %>').find('.skill-icons').css('display', 'none');
+
+  // DISPLAY SIMPLE_FORM'S INPUT FIELDS AND SAVE BUTTON
+  $('#skill-<%= @new_skill.id %>').find('.form-control').css('display', 'block');
+  $('#skill-<%= @new_skill.id %>').find('.skills-save-button').css('display', 'block');
+
+});
+
+// ACTIVATE EDITING MODE
+$('#skill-<%= @new_skill.id %>').find('.edit-skill').click();
+
+// UPDATING NO. OF SKILLS
+$('#your-skills').text("Your skills (<%= current_user.skills.length %>)");

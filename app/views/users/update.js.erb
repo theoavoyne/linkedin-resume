@@ -1,0 +1,23 @@
+// UPDATING USER INFO
+
+$('#first-name').text("<%= current_user.first_name %>");
+$('#last-name').text("<%= current_user.last_name %>");
+$('#headline').text("<%= current_user.headline %>");
+$('#location').text("<%= current_user.location_name %>");
+$('#email-address').text("<%= current_user.email %>");
+
+// HIDDING FORM
+
+$('#personnal-details').find('.form-control').css('display', 'none');
+
+// DISPLAYING USER INFO
+$('#personnal-details').find('.section-attribute-value').css('display', 'block');
+
+// STYLING
+
+$('#personnal-edit-buttons').removeClass('last-section-row');
+$('#personnal-details').find('.section-row').eq(-2).addClass('last-section-row');
+
+// DISPLAYING EDIT BUTTON
+
+$('#personnal-edit-icon').css('display', 'block');

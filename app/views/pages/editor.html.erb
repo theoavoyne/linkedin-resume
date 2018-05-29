@@ -1,2 +1,27 @@
-<h1>This is the Editor amigo</h1>
-<h2>Your current template is: <%= current_user.template %></h2>
+<div id="top-banner" style="background-image: linear-gradient(225deg,rgba(0,0,0,0.6),rgba(0,0,0,0.4)), url('<%= image_path "background3.jpg"%>')">
+  <h1>Editor</h1>
+</div>
+
+<div id="editor-wrapper">
+  <div class="row">
+
+    <div class="col-12 col-sm-8 col-lg-6 col-lg-offset-3">
+      <div class="accordion" id="accordion">
+
+        <!-- PERSONNAL DETAILS -->
+        <div class="section">
+          <%= render 'editor_sections/personnal_details', user: @user %>
+        </div>
+
+        <!-- SKILLS -->
+        <div class="section">
+          <%= render 'editor_sections/skills', skills: @skills %>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<%= javascript_pack_tag 'editor', media: 'all' %>

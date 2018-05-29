@@ -1,0 +1,30 @@
+@import "personnal_details";
+@import "section";
+@import "skills";
+
+#editor-wrapper {
+  width: 100vw;
+  padding: 30px 2vw;
+}
+
+#top-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  background-color: $blue;
+  h1 {
+    color: #fff;
+  }
+  background-size: cover;
+}
+
+.form-group { // Override simple_form style
+  margin: 0;
+}
+
+.border-bottom { // Add this class to separate a row from another
+  padding-bottom: 18px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid $light-gray;
+}

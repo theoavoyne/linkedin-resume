@@ -8,6 +8,8 @@ class PagesController < ApplicationController
   end
 
   def editor
+    @user = current_user
+    @skills = current_user.skills.order(:created_at)
   end
 
   def resume

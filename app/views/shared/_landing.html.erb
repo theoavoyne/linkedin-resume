@@ -1,0 +1,10 @@
+<div id="flex-banner">
+  <% if user_signed_in? %>
+    <h1>Welcome back <%= current_user.first_name %>!</h1>
+    <a href="#" class="custom-btn-big scroll-to-pick-a-template">Create new resume</a>
+  <% else %>
+    <h1>Resume Factory</h1>
+    <h2>Instantly create your resume with LinkedIn</h2>
+    <%= link_to 'Create my resume', user_linkedin_omniauth_authorize_path, class: 'custom-btn-big' %>
+  <% end %>
+</div>

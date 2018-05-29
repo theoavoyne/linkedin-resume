@@ -1,0 +1,36 @@
+<!-- SECTION HEADER -->
+<div class="collapsed section-header" type="button" data-toggle="collapse" data-target="#skills" aria-expanded="false" aria-controls="collapseTwo">
+  <div class="display-flex">
+    <i class="fas fa-bolt section-icon"></i>
+    <div>SKILLS</div>
+  </div>
+  <i class="fas fa-chevron-right chevron"></i>
+</div>
+
+<!-- SECTION CONTENT -->
+<div id="skills" class="collapse section-content" aria-labelledby="skills" data-parent="#accordion">
+
+  <p class="border-bottom">The skills recruiters look for when they scan through resumes depend on the type of position they're trying to fill. For example, if you're applying for a position that requires technical knowledge, include specific examples of technology or equipment you use, even if it could be reasonably assumed you must know these things. </p>
+  <h2 class="content-header" id="your-skills">Your skills (<%= skills.length %>)</h2>
+
+  <div id="skills-flex" class="border-bottom">
+
+    <% skills.each do |skill| %>
+
+      <%= render 'shared/skill', skill: skill %>
+
+    <% end %>
+
+  </div>
+
+  <h2 class="content-header">Add a new skill</h2>
+  <%= link_to skills_path, method: :post, remote: true do %>
+    <div id="new-skill">
+      <div id="plus-symbol">
+        <i class="fas fa-plus"></i>
+      </div>
+    </div>
+  <% end %>
+
+</div>
+

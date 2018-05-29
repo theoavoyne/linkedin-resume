@@ -1,0 +1,60 @@
+<!-- SECTION HEADER -->
+<div class="section-header section-header-selected" type="button" data-toggle="collapse" data-target="#personnal-details" aria-expanded="true" aria-controls="collapseOne">
+  <div class="display-flex">
+    <i class="fas fa-user section-icon"></i>
+    <div>PERSONNAL DETAILS</div>
+  </div>
+  <i class="fas fa-chevron-right chevron chevron-down"></i>
+</div>
+
+<!-- SECTION CONTENT -->
+<div id="personnal-details" class="collapse in section-content" aria-labelledby="personnal-details" data-parent="#accordion">
+
+  <%= simple_form_for(user, remote: true) do |f| %>
+
+    <div class="section-row" id="personnal-first-row">
+      <img src="<%= current_user.linkedin_picture_url%>" id= "personnal-image" alt="">
+      <div class="section-attribute">
+        <p class="label-name">First name</p>
+        <h4 class="section-attribute-value" id="first-name"><%= current_user.first_name %></h4>
+        <%= f.input :first_name, required: true, label: false, autofocus: true %>
+      </div>
+      <div class="section-attribute">
+        <p class="label-name">Last name</p>
+        <h4 class="section-attribute-value" id="last-name"><%= current_user.last_name %></h4>
+        <%= f.input :last_name, required: true, label: false %>
+      </div>
+    </div>
+
+    <div class="section-row" id="personnal-second-row">
+      <div class="section-attribute">
+        <p class="label-name">Headline</p>
+        <h4 class="section-attribute-value" id="headline"><%= current_user.headline %></h4>
+        <%= f.input :headline, required: false, label: false %>
+      </div>
+    </div>
+
+    <div class="section-row last-section-row" id="personnal-last-row">
+      <div class="section-attribute">
+        <p class="label-name">From</p>
+        <h4 class="section-attribute-value" id="location"><%= current_user.location_name %></h4>
+        <%= f.input :location_name, required: false, label: false %>
+      </div>
+      <div class="section-attribute">
+        <p class="label-name">Email Address</p>
+        <h4 class="section-attribute-value" id="email-address"><%= current_user.email %></h4>
+        <%= f.input :email, required: true, label: false %>
+      </div>
+    </div>
+
+    <div id="personnal-edit-buttons" class="section-row">
+      <div class="form-actions">
+        <%= f.button :submit, "Save changes", id: "personnal-save-button" %>
+      </div>
+    </div>
+
+  <% end %>
+
+  <i id="personnal-edit-icon" class="fas fa-pencil-alt"></i>
+</div>
+

@@ -1,28 +1,8 @@
-// LANDING SECTION
-
-#flex-banner {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  height: 500px;
-  background-color: $background-banner;
-  h1, h2 {
-    color: #fff;
-  }
-  h2 {
-    font-size: 32px;
-    margin-top: 0;
-    margin-bottom: 20px;
-  }
-}
-
 // ARROW SECTION
 
 .rectangle {
   font-size: 22px;
-  color: $background-banner;
+  color: $blue;
   height: 80px;
   display: flex;
   justify-content: center;
@@ -47,7 +27,7 @@
 };
 
 .step {
-  border: 2px solid $background-banner;
+  border: 2px solid $blue;
   border-radius: 50%;
   width: 50px;
   height: 50px;

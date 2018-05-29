@@ -1,0 +1,10 @@
+// UPDATING SKILL NAME
+$(`#skill-<%= @skill.id %>`).find('.skill-name').text("<%= @skill.name %>");
+
+// HIDE SIMPLE_FORM'S INPUT FIELDS AND SAVE BUTTON
+$(`#skill-<%= @skill.id %>`).find('.form-control').css('display', 'none');
+$(`#skill-<%= @skill.id %>`).find('.skills-save-button').css('display', 'none');
+
+// DISPLAY SKILL NAME AND ICONS
+$(`#skill-<%= @skill.id %>`).find('.skill-name').css('display', 'block');
+$(`#skill-<%= @skill.id %>`).find('.skill-icons').css('display', 'block');
