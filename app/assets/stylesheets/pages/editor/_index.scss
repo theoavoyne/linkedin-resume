@@ -30,6 +30,12 @@
   border-bottom: 1px solid $light-gray;
 }
 
+.border-bottom-white {
+  padding-bottom: 18px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid white;
+}
+
 .plus-symbol {
   height: 30px;
   width: 30px;
@@ -55,11 +61,18 @@
   &:hover {
     background-color: $light-blue;
     border: none;
-    #plus-symbol {
+    .plus-symbol {
       border: 3px solid white;
       i {
         color: white;
       }
     }
   }
+}
+
+.save-button {
+  background-color: $blue;
+  padding: 8px 25px;
+  color: white;
+  margin-top: 8px;
 }

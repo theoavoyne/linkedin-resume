@@ -12,7 +12,7 @@
 
   <%= simple_form_for(user, remote: true) do |f| %>
 
-    <div class="section-row" id="personnal-first-row">
+    <div class="section-row border-bottom" id="personnal-first-row">
       <img src="<%= current_user.linkedin_picture_url%>" id= "personnal-image" alt="">
       <div class="section-attribute">
         <p class="label-name">First name</p>
@@ -26,7 +26,7 @@
       </div>
     </div>
 
-    <div class="section-row" id="personnal-second-row">
+    <div class="section-row border-bottom" id="personnal-second-row">
       <div class="section-attribute">
         <p class="label-name">Headline</p>
         <h4 class="section-attribute-value" id="headline"><%= current_user.headline %></h4>
@@ -34,7 +34,7 @@
       </div>
     </div>
 
-    <div class="section-row last-section-row" id="personnal-last-row">
+    <div class="section-row" id="personnal-last-row">
       <div class="section-attribute">
         <p class="label-name">From</p>
         <h4 class="section-attribute-value" id="location"><%= current_user.location_name %></h4>
@@ -49,7 +49,7 @@
 
     <div id="personnal-edit-buttons" class="section-row">
       <div class="form-actions">
-        <%= f.button :submit, "Save changes", id: "personnal-save-button" %>
+        <%= f.button :submit, "Save changes", class: "save-button" %>
       </div>
     </div>
 

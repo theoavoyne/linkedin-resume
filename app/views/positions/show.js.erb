@@ -1,0 +1,5 @@
+$('#position-selected').find('form').remove()
+$('#position-selected').prepend('<%= j render "shared/position", position: @position %>')
+
+$('.inlist-position').removeClass('inlist-position-selected');
+$('#inlist-position-<%= @position.id %>').addClass('inlist-position-selected');

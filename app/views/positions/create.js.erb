@@ -1,0 +1,11 @@
+$('#positions-flex').append('<%= j render "shared/inlist_position", position: @new_position %>')
+
+$('#position-selected').find('form').remove();
+$('#position-selected').prepend('<%= j render "shared/position", position: @new_position %>');
+
+$('#positions').find('.section-attribute-value').css('display', 'none');
+$('#position-last-row').addClass('border-bottom-white');
+
+$('#positions').find('.form-control').css('display', 'block');
+$('#positions').find('.btn').css('display', 'block');
+$('#positions').find('.checkbox').css('display', 'block');

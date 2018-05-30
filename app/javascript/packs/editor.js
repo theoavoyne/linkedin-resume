@@ -45,4 +45,23 @@ $(document).ready(function(){
     $(`#skill-${skill_id}`).find('.skills-save-button').css('display', 'block');
   });
 
+  // EDITING A POSITION
+
+  $('#position-edit-icon').click(function() {
+
+    // HIDE EDIT BUTTON AND CHANGE EDITING ATTRIBUTE DU TRUE
+    $(this).css('display', 'none');
+    $(this).attr('editing', 'true');
+
+    // HIDE POSITION INFOS AND ADD BORDER BOTTOM TO LAST ROW
+    $('#positions').find('.section-attribute-value').css('display', 'none');
+    $('#position-last-row').addClass('border-bottom-white');
+
+    // DISPLAY SIMPLE_FORM'S INPUT FIELDS
+    $('#positions').find('.form-control').css('display', 'block');
+    $('#positions').find('.btn').css('display', 'block');
+    $('#positions').find('.checkbox').css('display', 'block');
+
+  });
+
 });

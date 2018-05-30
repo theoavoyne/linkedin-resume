@@ -70,26 +70,10 @@
 .section-row {
   display: flex;
   align-items: center;
-  padding-bottom: 18px;
-  margin-bottom: 10px;
-  border-bottom: 1px solid $light-gray;
-}
-
-.gray-section-row {
-  display: flex;
-  align-items: center;
-  padding: 25px 2vw;
-  background-color: $light-gray;
-  &:not(:last-child) {
-    margin: 1px;
-  }
 }
 
 .last-section-row { // Override .section-row
   display: flex !important;
-  padding-bottom: 0;
-  margin-bottom: 0;
-  border-bottom: none;
 }
 
 .section-attribute { // Contain the label name and the value

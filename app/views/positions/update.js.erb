@@ -1,0 +1,7 @@
+$('#inlist-position-<%= @position.id %>').find('h4').text('<%= @position.company_name %>');
+
+$('#position-selected').find('form').remove();
+$('#position-selected').prepend('<%= j render "shared/position", position: @position %>');
+
+$('#position-edit-icon').css('display', 'block');
+$('#position-edit-icon').attr('editing', 'false');
