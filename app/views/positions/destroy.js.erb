@@ -1,0 +1,9 @@
+$('#inlist-position-<%= @position.id %>').parent().remove()
+$('#inlist-position-<%= current_user.positions.first.id %>').addClass('inlist-position-selected');
+
+$('#position-selected').find('form').remove()
+$('#position-selected').prepend('<%= j render "shared/position", position: current_user.positions.first %>')
+
+$('#position-edit-icon').css('display', 'block'); // If user was editing
+
+$('#your-positions').text('Your positions (<%= current_user.positions.length %>)');

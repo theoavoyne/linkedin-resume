@@ -9,14 +9,14 @@ $('#email-address').text("<%= current_user.email %>");
 // HIDDING FORM
 
 $('#personnal-details').find('.form-control').css('display', 'none');
+$('#personnal-edit-buttons').css('display', 'none');
 
 // DISPLAYING USER INFO
 $('#personnal-details').find('.section-attribute-value').css('display', 'block');
 
 // STYLING
 
-$('#personnal-edit-buttons').removeClass('last-section-row');
-$('#personnal-details').find('.section-row').eq(-2).addClass('last-section-row');
+$('#personnal-last-row').removeClass('border-bottom');
 
 // DISPLAYING EDIT BUTTON
 

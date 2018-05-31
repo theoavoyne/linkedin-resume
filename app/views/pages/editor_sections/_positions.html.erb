@@ -13,7 +13,7 @@
   <p class="border-bottom">Describe your responsibilities in concise statements led by strong verbs. Focus on those skills and strengths that you possess and that you have identified as being important to your field. Try to incorporate industry specific key words. Show potential employers exactly how you will fit their position and their company. </p>
   <h2 class="content-header" id="your-positions">Your positions (<%= @positions.length %>)</h2>
 
-  <div id="positions-flex">
+  <div id="positions-flex" class="border-bottom">
 
     <% @positions.each do |position| %>
 
@@ -27,7 +27,7 @@
 
     <%= render 'shared/position', position: @positions.first %>
 
-    <i id="position-edit-icon" class="fas fa-pencil-alt" editing="false"></i>
+    <i id="position-edit-icon" class="fas fa-pencil-alt"></i>
   </div>
 
   <h2 class="content-header">Add a new position</h2>

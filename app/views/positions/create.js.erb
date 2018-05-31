@@ -1,4 +1,6 @@
 $('#positions-flex').append('<%= j render "shared/inlist_position", position: @new_position %>')
+$('.inlist-position').removeClass('inlist-position-selected');
+$('#inlist-position-<%= @new_position.id %>').addClass('inlist-position-selected');
 
 $('#position-selected').find('form').remove();
 $('#position-selected').prepend('<%= j render "shared/position", position: @new_position %>');
@@ -6,6 +8,11 @@ $('#position-selected').prepend('<%= j render "shared/position", position: @new_
 $('#positions').find('.section-attribute-value').css('display', 'none');
 $('#position-last-row').addClass('border-bottom-white');
 
+$('#position-edit-icon').css('display', 'none');
+$('#position-delete-icon').css('display', 'none');
+
 $('#positions').find('.form-control').css('display', 'block');
 $('#positions').find('.btn').css('display', 'block');
 $('#positions').find('.checkbox').css('display', 'block');
+
+$('#your-positions').text('Your positions (<%= current_user.positions.length %>)');

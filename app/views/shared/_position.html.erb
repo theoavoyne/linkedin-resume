@@ -7,7 +7,7 @@
     <div class="section-attribute">
       <p class="label-name">Company</p>
       <h4 class="section-attribute-value title"><%= position.company_name %></h4>
-      <%= f.input :company_name, required: true, label: false %>
+      <%= f.input :company_name, required: true, label: false, autofocus: true %>
     </div>
   </div>
 
@@ -30,7 +30,7 @@
     <div class="section-attribute">
       <p class="label-name">Summary</p>
       <p class="section-attribute-value summary"><%= position.summary %></p>
-      <%= f.input :summary, required: true, label: false, autofocus: true %>
+      <%= f.input :summary, required: true, label: false %>
     </div>
   </div>
 
@@ -38,4 +38,7 @@
     <%= f.button :submit, "Save", class: "save-button" %>
   </div>
 
+  <%= link_to position_path(position), method: :delete, data: { confirm: "Are you sure?" }, remote: :true do %>
+  <i id="position-delete-icon" class="fas fa-trash-alt"></i>
+<% end %>
 <% end %>

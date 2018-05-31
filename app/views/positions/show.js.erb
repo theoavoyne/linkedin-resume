@@ -3,3 +3,5 @@ $('#position-selected').prepend('<%= j render "shared/position", position: @posi
 
 $('.inlist-position').removeClass('inlist-position-selected');
 $('#inlist-position-<%= @position.id %>').addClass('inlist-position-selected');
+
+$('#position-edit-icon').css('display', 'block'); // If user was editing

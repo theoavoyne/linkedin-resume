@@ -1,5 +1,5 @@
 class PositionsController < ApplicationController
-  before_action :find_position, only: [:show, :update]
+  before_action :find_position, only: [:show, :update, :destroy]
 
   def show
     authorize @position
@@ -36,6 +36,15 @@ class PositionsController < ApplicationController
         format.html { render '/editor' }
         format.js
       end
+    end
+  end
+
+  def destroy
+    authorize @position
+    @position.destroy
+    respond_to do |format|
+      format.html { redirect_to editor_path }
+      format.js
     end
   end
 

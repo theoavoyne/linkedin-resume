@@ -16,16 +16,16 @@ $(document).ready(function(){
 
   $('#personnal-edit-icon').click(function() {
 
-    // HIDE EDIT BUTTON AND USER INFOS
+    // HIDE EDIT BUTTON, USER INFOS AND ADD BORDER BOTTOM TO LAST ROW
     $(this).css('display', 'none');
     $('#personnal-details').find('.section-attribute-value').css('display', 'none');
+    $('#personnal-last-row').addClass('border-bottom');
 
     // DISPLAY SIMPLE_FORM'S INPUT FIELDS
     $('#personnal-details').find('.form-control').css('display', 'block');
 
     // ASSIGNED THE LAST-SECTION-ROW CLASS TO THE BUTTONS (WHICH OVERIDE THE DISPLAY: NONE)
-    $('#personnal-details').find('.last-section-row').removeClass('last-section-row');
-    $('#personnal-edit-buttons').addClass('last-section-row')
+    $('#personnal-edit-buttons').css('display', 'flex')
 
   });
 
@@ -46,12 +46,13 @@ $(document).ready(function(){
   });
 
   // EDITING A POSITION
+  $('a.position-show-link').first().find('.inlist-position').addClass('inlist-position-selected');
 
   $('#position-edit-icon').click(function() {
 
-    // HIDE EDIT BUTTON AND CHANGE EDITING ATTRIBUTE DU TRUE
+    // HIDE EDIT AND DELETE BUTTONS
     $(this).css('display', 'none');
-    $(this).attr('editing', 'true');
+    $('#position-delete-icon').css('display', 'none');
 
     // HIDE POSITION INFOS AND ADD BORDER BOTTOM TO LAST ROW
     $('#positions').find('.section-attribute-value').css('display', 'none');
@@ -63,5 +64,4 @@ $(document).ready(function(){
     $('#positions').find('.checkbox').css('display', 'block');
 
   });
-
 });
