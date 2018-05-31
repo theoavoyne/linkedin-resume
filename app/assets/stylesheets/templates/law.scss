@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700,900');
+
+/* GENERAL */
+* {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 10pt;
+  color: rgba(0,0,0,0.85);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+#first-name, #infos, .title, .degree {
+  color: #c57c64;
+}
+
+/* LEFT PART */
+#left-part {
+  background-color: #f2f2f2;
+  width: 55mm;
+  float: left;
+  padding: 5mm;
+  height: 233mm;
+}
+
+#first-name, #last-name {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 30pt;
+  font-weight: 700;
+}
+
+#headline {
+  font-family: "Times New Roman", Times, serif;
+}
+
+#avatar {
+  margin: 15mm 7.5mm;
+  width: 40mm;
+  border-radius: 50%;
+}
+
+#infos {
+  font-weight: 700;
+  text-align: center;
+}
+
+#list-skills li {
+  margin-bottom: 5pt;
+}
+
+.skill-level-bar-100 {
+  width: 130pt;
+  background-color: rgb(230,230,230);
+}
+
+.skill-level-bar {
+  height: 5pt;
+  background-color: #c57c64;
+}
+
+
+/* RIGH PART */
+#right-part {
+  width: 110mm;
+  float: right;
+  padding-left: 5mm;
+}
+
+.element {
+  margin-bottom: 5mm;
+}
+
+.date{
+  width: 27.5mm;
+  font-style: italic;
+  float: left;
+}
+
+.section-title {
+  background-color: rgba(0,0,0,0.85);
+  color: #fff;
+  padding-left: 2mm;
+  font-weight: 900;
+  font-size: 12pt;
+  margin: 3mm 0;
+}
+
+.title, .company, .degree, .school {
+  font-weight: 700;
+  text-align: right;
+}
+
+.summary {
+  margin: 5mm 0 8mm 0;
+}
+
+.bar {
+  border-bottom: 0.3mm solid rgba(200,200,200,0.2);
+}
