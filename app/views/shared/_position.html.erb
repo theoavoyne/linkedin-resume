@@ -1,12 +1,12 @@
 <%= simple_form_for(position, remote: true) do |f| %>
 
-  <div class="section-row border-bottom-white" id="position-first-row">
+  <div class="border-bottom-white" id="position-first-row">
     <% if position.company_ticker_url %>
       <img src="<%= position.company_ticker_url %>" class= "company-logo" alt="">
     <% end %>
     <div class="section-attribute">
       <p class="label-name">Company</p>
-      <h4 class="section-attribute-value title"><%= position.company_name %></h4>
+      <h4 class="section-attribute-value"><%= position.company_name %></h4>
       <%= f.input :company_name, required: true, label: false, autofocus: true %>
     </div>
   </div>
@@ -14,31 +14,31 @@
   <div class="section-row border-bottom-white" id="position-second-row">
     <div class="section-attribute">
       <p class="label-name">Title</p>
-      <h4 class="section-attribute-value title"><%= position.title %></h4>
+      <h5 class="section-attribute-value"><%= position.title %></h5>
       <%= f.input :title, required: true, label: false %>
     </div>
     <div class="section-attribute">
       <p class="label-name">Date</p>
-      <h4 class="section-attribute-value start_date"><%= position.start_date.strftime("%b %Y") %> - <%= position.is_current ? "Today" : position.end_date.strftime("%b %Y")%></h4>
-      <%= f.input :start_date, required: true, label: false %>
-      <%= f.input :end_date, required: true, label: false %>
-      <%= f.input :is_current, required: true, label: false %>
+      <h5 class="section-attribute-value"><%= position.start_date.strftime("%b %Y") %> - <%= position.is_current ? "Today" : position.end_date.strftime("%b %Y")%></h5>
+      <%= f.input :start_date, wrapper_html: { class: "input-wrapper" }, start_year: Date.today.year - 90, end_year: Date.today.year, discard_day: true, order: [:month, :year] %>
+      <%= f.input :end_date, wrapper_html: { class: "input-wrapper" }, start_year: Date.today.year - 90, end_year: Date.today.year, discard_day: true, order: [:month, :year] %>
+      <%= f.input :is_current, required: true %>
     </div>
   </div>
 
   <div class="section-row" id="position-last-row">
     <div class="section-attribute">
       <p class="label-name">Summary</p>
-      <p class="section-attribute-value summary"><%= position.summary %></p>
-      <%= f.input :summary, required: true, label: false %>
+      <p class="section-attribute-value text-justify"><%= position.summary %></p>
+      <%= f.input :summary, required: true, label: false, input_html: { rows: 10 } %>
     </div>
   </div>
 
   <div class="form-actions section-row">
-    <%= f.button :submit, "Save", class: "save-button" %>
+    <%= f.button :submit, "Save Changes", class: "save-button" %>
   </div>
 
   <%= link_to position_path(position), method: :delete, data: { confirm: "Are you sure?" }, remote: :true do %>
-  <i id="position-delete-icon" class="fas fa-trash-alt"></i>
-<% end %>
+    <i id="position-delete-icon" class="fas fa-trash-alt position-icons"></i>
+  <% end %>
 <% end %>

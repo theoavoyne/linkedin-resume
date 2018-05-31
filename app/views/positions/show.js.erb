@@ -1,7 +1,10 @@
-$('#position-selected').find('form').remove()
-$('#position-selected').prepend('<%= j render "shared/position", position: @position %>')
-
+// SELECT THE NEW POSITION IN THE LIST
 $('.inlist-position').removeClass('inlist-position-selected');
 $('#inlist-position-<%= @position.id %>').addClass('inlist-position-selected');
 
-$('#position-edit-icon').css('display', 'block'); // If user was editing
+// REMOVE THE OLD POSITION FROM (#position-selected) AND DISPLAY THE NEW ONE
+$('#position-selected').find('form').remove();
+$('#position-selected').prepend('<%= j render "shared/position", position: @position %>');
+
+// DISPLAY EDIT ICON (THAT WAS HIDDEN IF USER WAS EDITING)
+$('#position-edit-icon').css('display', 'block');

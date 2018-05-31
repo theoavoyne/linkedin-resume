@@ -20,7 +20,7 @@
 }
 
 .inlist-position-selected {
-  background-color: $light-blue !important;
+  background-color: $light-blue;
 }
 
 .position-show-link {
@@ -37,22 +37,14 @@
 }
 
 .company-logo {
-  height: 60px;
-  margin-right: 2vw;
+  max-height: 60px;
+  margin-bottom: 15px;
 }
 
 #position-edit-icon {
   position: absolute;
   top: 25px;
-  right: calc(2vw + 35px);
-  font-size: 25px;
-  cursor: pointer;
-}
-
-#position-edit-icon {
-  position: absolute;
-  top: 25px;
-  right: calc(2vw + 35px);
+  right: calc(3vw + 25px);
   font-size: 25px;
   cursor: pointer;
 }
@@ -81,4 +73,14 @@
 
 #positions .checkbox {
   display: none;
+}
+
+#positions .control-label {
+  display: none;
+}
+
+// DATE INPUT INLINE
+
+.input-wrapper > div {
+  display: flex;
 }

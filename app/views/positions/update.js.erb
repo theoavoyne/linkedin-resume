@@ -1,7 +1,9 @@
-$('#inlist-position-<%= @position.id %>').find('h4').text('<%= @position.company_name %>');
+// UPDATE THE NAME IN THE POSITIONS LIST
+$('#inlist-position-<%= @position.id %>').find('h4').text('<%= @position.company_name.html_safe %>');
 
+// REFRESH THE POSITION DISPLAYED
 $('#position-selected').find('form').remove();
 $('#position-selected').prepend('<%= j render "shared/position", position: @position %>');
 
-$('#position-edit-icon').css('display', 'block');
-$('#position-delete-icon').css('display', 'block');
+// DISPLAY EDIT AND DELETE ICONS
+$('.position-icons').css('display', 'block');

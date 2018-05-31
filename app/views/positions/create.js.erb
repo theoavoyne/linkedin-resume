@@ -1,18 +1,64 @@
-$('#positions-flex').append('<%= j render "shared/inlist_position", position: @new_position %>')
+<% if @is_first %>
+
+  // ADD THE DIV THAT WILL CONTAIN THE SELECTED POSITION'S INFO TO THE DOM
+  $('#position-selected-wrapper').html('<div id="position-selected" class="border-bottom"></div>');
+  $('#positions-flex-wrapper').html('<div id="positions-flex"></div>');
+
+  //INSERT THE EDIT ICON INSIDE THIS DIV
+  $('#position-selected').append('<i id="position-edit-icon" class="fas fa-pencil-alt position-icons"></i>');
+
+  // MAKING THIS EDIT ICON CLICKABLE
+  $('#position-edit-icon').click(function() {
+
+    // HIDE EDIT AND DELETE BUTTONS
+    $('.position-icons').css('display', 'none');
+
+    // HIDE POSITION INFOS
+    $('#positions').find('.section-attribute-value').css('display', 'none');
+
+    // ADD BORDER BOTTOM WHITE TO LAST ROW
+    $('#position-last-row').addClass('border-bottom-white');
+
+    // DISPLAY SIMPLE_FORM'S INPUT FIELDS, BUTTON AND CHECKBOX
+    $('#positions').find('.form-control').css('display', 'block');
+    $('#positions').find('.btn').css('display', 'block');
+    $('#positions').find('.checkbox').css('display', 'block');
+
+  });
+
+<% else %>
+
+  $('#position-selected').find('form').remove();
+
+<% end %>
+
+// ADD THE POSITION IN THE LIST (#positions-flex)
+$('#positions-flex').append('<%= j render "shared/inlist_position", position: @new_position %>');
+
+// SELECT THIS NEW POSITION IN THE LIST
 $('.inlist-position').removeClass('inlist-position-selected');
 $('#inlist-position-<%= @new_position.id %>').addClass('inlist-position-selected');
 
-$('#position-selected').find('form').remove();
+// FILL (#position-selected) WITH THE POSITION CREATED
 $('#position-selected').prepend('<%= j render "shared/position", position: @new_position %>');
 
+// UPDATING THE NUMBER OF POSITIONS
+$('#your-positions').text('Your positions (<%= current_user.positions.length %>)');
+
+
+// --> ACTIVATING THE EDITING MODE
+
+// HIDE EDIT AND DELETE BUTTONS
+$('.position-icons').css('display', 'none');
+
+// HIDE POSITION INFOS
 $('#positions').find('.section-attribute-value').css('display', 'none');
+
+// ADD BORDER BOTTOM WHITE TO LAST ROW
 $('#position-last-row').addClass('border-bottom-white');
 
-$('#position-edit-icon').css('display', 'none');
-$('#position-delete-icon').css('display', 'none');
-
+// DISPLAY SIMPLE_FORM'S INPUT FIELDS, BUTTON CHECKBOX AND LABELS
 $('#positions').find('.form-control').css('display', 'block');
 $('#positions').find('.btn').css('display', 'block');
 $('#positions').find('.checkbox').css('display', 'block');
-
-$('#your-positions').text('Your positions (<%= current_user.positions.length %>)');
+$('#positions').find('.control-label').css('display', 'block');

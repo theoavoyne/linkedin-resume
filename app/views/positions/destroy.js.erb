@@ -1,9 +1,25 @@
-$('#inlist-position-<%= @position.id %>').parent().remove()
-$('#inlist-position-<%= current_user.positions.first.id %>').addClass('inlist-position-selected');
+<% if @was_last %>
 
-$('#position-selected').find('form').remove()
-$('#position-selected').prepend('<%= j render "shared/position", position: current_user.positions.first %>')
+  // REMOVE THE DIV THAT CONTAIN THE SELECTED POSITION'S INFO FROM THE DOM
+  $('#position-selected-wrapper').html('<p class="text-justify">The position section is empty, click the button below to add a new experience to your resume.</p>');
+  $('#positions-flex').remove();
 
-$('#position-edit-icon').css('display', 'block'); // If user was editing
+<% else %>
 
+  // REMOVE THE POSITION FROM THE LIST (#positions-flex)
+  $('#inlist-position-<%= @position.id %>').parent().remove();
+
+  // REMOVE THE OLD SELECTED POSITION
+  $('#position-selected').find('form').remove();
+
+  // SELECT THE FIRST POSITION TO BE DISPLAYED
+  $('#position-selected').prepend('<%= j render "shared/position", position: @next %>');
+  $('#inlist-position-<%= @next.id %>').addClass('inlist-position-selected');
+
+  // DISPLAY EDIT ICON (THAT WAS HIDDEN IF USER WAS EDITING)
+  $('#position-edit-icon').css('display', 'block');
+
+<% end %>
+
+// UPDATING THE NUMBER OF POSITIONS
 $('#your-positions').text('Your positions (<%= current_user.positions.length %>)');

@@ -46,22 +46,24 @@ $(document).ready(function(){
   });
 
   // EDITING A POSITION
-  $('a.position-show-link').first().find('.inlist-position').addClass('inlist-position-selected');
+
+  $('.position-show-link').first().find('.inlist-position').addClass('inlist-position-selected')
 
   $('#position-edit-icon').click(function() {
 
     // HIDE EDIT AND DELETE BUTTONS
-    $(this).css('display', 'none');
-    $('#position-delete-icon').css('display', 'none');
+    $('.position-icons').css('display', 'none');
 
-    // HIDE POSITION INFOS AND ADD BORDER BOTTOM TO LAST ROW
+    // HIDE POSITION INFOS
     $('#positions').find('.section-attribute-value').css('display', 'none');
+
+    // ADD BORDER BOTTOM WHITE TO LAST ROW
     $('#position-last-row').addClass('border-bottom-white');
 
-    // DISPLAY SIMPLE_FORM'S INPUT FIELDS
+    // DISPLAY SIMPLE_FORM'S INPUT FIELDS, BUTTON CHECKBOX AND LABELS
     $('#positions').find('.form-control').css('display', 'block');
     $('#positions').find('.btn').css('display', 'block');
     $('#positions').find('.checkbox').css('display', 'block');
-
+    $('#positions').find('.control-label').css('display', 'block');
   });
 });

@@ -80,7 +80,7 @@
   &:not(:last-child) {
     margin-right: 3vw;
   }
-  h4 {
+  h4, h5 {
     margin: 0;
   }
 }
@@ -89,4 +89,10 @@
   margin-bottom: 5px;
   color: $blue;
   font-size: 16px;
+}
+
+#position-last-row {
+  .section-attribute {
+    width: 100%;
+  }
 }

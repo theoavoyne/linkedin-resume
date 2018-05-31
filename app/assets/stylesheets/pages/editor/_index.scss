@@ -24,6 +24,12 @@
   margin: 0;
 }
 
+.display-none {
+  display: none;
+}
+
+// BORDER BOTTOM
+
 .border-bottom { // Add this class to separate a row from another
   padding-bottom: 18px;
   margin-bottom: 10px;
@@ -35,6 +41,8 @@
   margin-bottom: 10px;
   border-bottom: 1px solid white;
 }
+
+// ADD BUTTON
 
 .plus-symbol {
   height: 30px;
@@ -70,9 +78,17 @@
   }
 }
 
+// SAVE BUTTON
+
 .save-button {
   background-color: $blue;
   padding: 8px 25px;
   color: white;
   margin-top: 8px;
+  transition: 0.3s;
+  &:hover {
+    background-color: $blue;
+    color: white;
+    opacity: 0.9;
+  }
 }

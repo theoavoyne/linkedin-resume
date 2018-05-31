@@ -10,17 +10,24 @@ class PositionsController < ApplicationController
   end
 
   def create
+    @is_first = current_user.positions.length.zero?
     @new_position = current_user.positions.build(
       company_name: "New position",
-      title: "Position held",
-      start_date: "Thu, 01 Jan 2015",
+      title: "Lorem ipsum dolor sit amet",
+      start_date: Date.today,
       is_current: true,
-      summary: "Describe your responsibilities in concise statements led by strong verbs. Focus on those skills and strengths that you possess and that you have identified as being important to your field. Try to incorporate industry specific key words. Show potential employers exactly how you will fit their position and their company.")
+      summary: Faker::Lorem.paragraph(5))
     authorize @new_position
-    @new_position.save
-    respond_to do |format|
-      format.html { redirect_to editor_path }
-      format.js
+    if @new_position.save
+      respond_to do |format|
+        format.html { redirect_to editor_path }
+        format.js
+      end
+    else
+      respond_to do |format|
+        format.html { render '/editor' }
+        format.js
+      end
     end
   end
 
@@ -42,6 +49,8 @@ class PositionsController < ApplicationController
   def destroy
     authorize @position
     @position.destroy
+    @was_last = current_user.positions.length.zero?
+    @next = current_user.positions.first unless @was_last
     respond_to do |format|
       format.html { redirect_to editor_path }
       format.js

@@ -10,26 +10,51 @@
 <!-- SECTION CONTENT -->
 <div id="positions" class="collapse section-content" aria-labelledby="positions" data-parent="#accordion">
 
-  <p class="border-bottom">Describe your responsibilities in concise statements led by strong verbs. Focus on those skills and strengths that you possess and that you have identified as being important to your field. Try to incorporate industry specific key words. Show potential employers exactly how you will fit their position and their company. </p>
+  <!-- SECTION DESCRIPTION -->
+  <p class="border-bottom text-justify">Describe your responsibilities in concise statements led by strong verbs. Focus on those skills and strengths that you possess and that you have identified as being important to your field. Try to incorporate industry specific key words. Show potential employers exactly how you will fit their position and their company. </p>
+
+  <!-- POSITIONS LIST -->
   <h2 class="content-header" id="your-positions">Your positions (<%= @positions.length %>)</h2>
 
-  <div id="positions-flex" class="border-bottom">
+    <div id="positions-flex-wrapper">
 
-    <% @positions.each do |position| %>
+      <% if current_user.positions.exists? %>
 
-      <%= render 'shared/inlist_position', position: position %>
+        <div id="positions-flex">
+
+          <% @positions.each do |position| %>
+
+            <%= render 'shared/inlist_position', position: position %>
+
+          <% end %>
+
+        </div>
+
+      <% else %>
+
+        <p class="text-justify">The position section is empty, click the button below to add a new experience to your resume.</p>
+
+      <% end %>
+
+    </div>
+
+  <!-- POSITION SELECTED -->
+  <div class="border-bottom" id="position-selected-wrapper">
+
+    <% if current_user.positions.exists? %>
+
+      <div id="position-selected" class="border-bottom">
+
+        <%= render 'shared/position', position: @positions.first %>
+        <i id="position-edit-icon" class="fas fa-pencil-alt position-icons"></i>
+
+      </div>
 
     <% end %>
 
   </div>
 
-  <div id="position-selected" class="border-bottom">
-
-    <%= render 'shared/position', position: @positions.first %>
-
-    <i id="position-edit-icon" class="fas fa-pencil-alt"></i>
-  </div>
-
+  <!-- ADD POSITION -->
   <h2 class="content-header">Add a new position</h2>
   <%= link_to positions_path, method: :post, remote: true do %>
     <div id="new-position" class="new-element">
