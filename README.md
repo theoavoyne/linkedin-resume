@@ -17,6 +17,6 @@ ResumeFactory is an online resume builder that can turn your LinkedIn profile in
 
 ## Main features
 
-* Authentication with LinkedIn (OAuth 2.0 protocol) with [omniauth-linkedin](https://github.com/skorks/omniauth-linkedin)
-* HTML-based PDF generator using shell utility Wkhtmltopdf with [wicked_pdf](https://github.com/mileszs/wicked_pdf).
+* Authentication with LinkedIn (OAuth 2.0 protocol) with [omniauth-linkedin](https://github.com/skorks/omniauth-linkedin) gem.
+* HTML-based PDF generator using shell utility Wkhtmltopdf with [wicked_pdf](https://github.com/mileszs/wicked_pdf) gem.
 * Interactive and asynchronous resume editor using AJAX, JavaScript/JQuery, CoffeeScript, HTML5, SCSS and Bootstrap.
