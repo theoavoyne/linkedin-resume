@@ -4,7 +4,7 @@ ResumeFactory is an online resume builder that can turn your LinkedIn profile in
 
 ## Website
 
-[linkedin-resume.herokuapp.com](linkedin-resume.herokuapp.com)
+[linkedin-resume.herokuapp.com](http://linkedin-resume.herokuapp.com)
 
 ## Built with
 
